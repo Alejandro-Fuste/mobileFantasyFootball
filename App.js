@@ -1,23 +1,53 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./src/screens/HomeScreen";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import LeagueScreen from "./src/screens/LeagueScreen";
 import TeamScreen from "./src/screens/TeamScreen";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: "Home" }}
+      <Tab.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: "#000000",
+          tabBarInactiveTintColor: "#8e8e93",
+        }}
+      >
+        <Tab.Screen
+          name="Leagues"
+          component={LeagueScreen}
+          options={{
+            tabBarLabel: "League",
+            tabBarIcon: (tabInfo) => {
+              return (
+                <Ionicons
+                  name="list-circle"
+                  size={24}
+                  color={tabInfo.focused ? "#000000" : "#8e8e93"}
+                />
+              );
+            },
+          }}
         />
-        <Stack.Screen name="Leagues" component={LeagueScreen} />
-        <Stack.Screen name="Team" component={TeamScreen} />
-      </Stack.Navigator>
+        <Tab.Screen
+          name="Team"
+          component={TeamScreen}
+          options={{
+            tabBarLabel: "Team",
+            tabBarIcon: (tabInfo) => {
+              return (
+                <Ionicons
+                  name="american-football"
+                  size={24}
+                  color={tabInfo.focused ? "#000000" : "#8e8e93"}
+                />
+              );
+            },
+          }}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
