@@ -4,12 +4,14 @@ import React from "react";
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.headerContainer}>
         <Text style={styles.logo}>Logo</Text>
         <Text style={styles.logo}>Title</Text>
       </View>
 
-      <Text>HomeScreen - Display leagues here</Text>
+      <View style={styles.contentContainer}>
+        <Text>HomeScreen - Display leagues here</Text>
+      </View>
     </View>
   );
 };
@@ -19,14 +21,22 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: 50,
   },
   headerContainer: {
+    flex: 1,
     padding: 10,
+    flexDirection: "row",
+    backgroundColor: "steelblue",
+    justifyContent: "space-evenly",
   },
   logo: {
     width: 66,
     height: 58,
+  },
+  contentContainer: {
+    flex: 10,
+    padding: 10,
+    backgroundColor: "skyblue",
+    alignItems: "center",
   },
 });
