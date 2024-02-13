@@ -1,15 +1,15 @@
-import { StatusBar } from "expo-status-bar";
 import { Button, StyleSheet, Text, View } from "react-native";
+import React from "react";
 
 const TeamScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>This is the team page.</Text>
+      <Text>Team screen - Display owner and players info</Text>
 
-      <Button
-        title="Go to home screen"
-        onPress={() => navigation.navigate("Home")}
-      />
+      {/* <Button
+        title="Go to league screen"
+        onPress={() => navigation.navigate("League")}
+      /> */}
     </View>
   );
 };

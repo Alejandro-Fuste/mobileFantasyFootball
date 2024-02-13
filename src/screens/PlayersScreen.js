@@ -5,7 +5,7 @@ import React from "react";
 const PlayersScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>PlayersScreen</Text>
+      <Text>PlayersScreen - Diplay all players here</Text>
     </View>
   );
 };

@@ -1,9 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import LeagueScreen from "./src/screens/LeagueScreen";
+
+import HomeScreen from "./src/screens/HomeScreen";
 import PlayersScreen from "./src/screens/PlayersScreen";
 import DraftScreen from "./src/screens/DraftScreen";
-import TeamScreen from "./src/screens/TeamScreen";
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StatusBar } from "expo-status-bar";
 
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto"></StatusBar>
+
       <Tab.Navigator
         screenOptions={{
           tabBarActiveTintColor: "#000000",
@@ -21,9 +23,9 @@ export default function App() {
       >
         <Tab.Screen
           name="Leagues"
-          component={LeagueScreen}
+          component={HomeScreen}
           options={{
-            tabBarLabel: "League",
+            tabBarLabel: "Leagues",
             tabBarIcon: (tabInfo) => {
               return (
                 <Ionicons
