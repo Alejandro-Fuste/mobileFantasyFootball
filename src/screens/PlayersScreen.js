@@ -1,21 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const LeagueScreen = ({ navigation }) => {
+const PlayersScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text>LeagueScreen</Text>
-
-      <Button
-        title="Go to team page"
-        onPress={() => navigation.navigate("Team")}
-      />
+      <Text>PlayersScreen</Text>
     </View>
   );
 };
 
-export default LeagueScreen;
+export default PlayersScreen;
 
 const styles = StyleSheet.create({
   container: {
