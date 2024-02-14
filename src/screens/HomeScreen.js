@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
+import League from "../components/League";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -11,6 +12,9 @@ const HomeScreen = ({ navigation }) => {
 
       <View style={styles.contentContainer}>
         <Text>HomeScreen - Display leagues here</Text>
+        <League />
+        <League />
+        <League />
       </View>
     </View>
   );
