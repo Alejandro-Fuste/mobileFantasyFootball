@@ -1,10 +1,7 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import TeamScreen from "./TeamScreen";
 
-const Stack = createNativeStackNavigator();
-
-const LeagueScreen = ({ navigation }) => {
+const LeagueScreen = () => {
   return (
     <View style={styles.container}>
       <Text>LeagueScreen - Display teams from the particular league</Text>

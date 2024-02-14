@@ -1,11 +1,18 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Button, Pressable, StyleSheet, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
 const League = () => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.contentContainer}>
-      <Text style={styles.league}>League Avatar</Text>
-      <Text style={styles.league}>League Name</Text>
+    <View>
+      <Pressable
+        style={styles.contentContainer}
+        onPress={() => navigation.navigate("League")}
+      >
+        <Text style={styles.league}>League Avatar</Text>
+        <Text style={styles.league}>League Name</Text>
+      </Pressable>
     </View>
   );
 };

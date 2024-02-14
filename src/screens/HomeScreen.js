@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import League from "../components/League";
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
