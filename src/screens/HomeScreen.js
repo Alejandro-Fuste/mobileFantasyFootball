@@ -12,9 +12,9 @@ const HomeScreen = () => {
 
       <View style={styles.contentContainer}>
         <Text>HomeScreen - Display leagues here</Text>
-        <League />
-        <League />
-        <League />
+        <League id="1" />
+        <League id="2" />
+        <League id="3" />
       </View>
     </View>
   );

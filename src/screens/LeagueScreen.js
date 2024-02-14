@@ -1,10 +1,14 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const LeagueScreen = () => {
+const LeagueScreen = ({ route }) => {
+  const { sampleID } = route.params;
   return (
     <View style={styles.container}>
-      <Text>LeagueScreen - Display teams from the particular league</Text>
+      <Text>
+        LeagueScreen {JSON.stringify(sampleID)} - Display teams from the
+        particular league
+      </Text>
 
       {/* <Button
         title="Go to team page"

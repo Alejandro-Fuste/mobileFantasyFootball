@@ -20,6 +20,7 @@ function TabNavigator() {
       screenOptions={{
         tabBarActiveTintColor: "#000000",
         tabBarInactiveTintColor: "#8e8e93",
+        headerShown: false,
       }}
     >
       <Tab.Screen
