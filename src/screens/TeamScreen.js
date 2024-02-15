@@ -1,5 +1,6 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import Player from "../components/Player";
 
 const TeamScreen = ({ route }) => {
   const { sampleID, teamName } = route.params;
@@ -17,6 +18,12 @@ const TeamScreen = ({ route }) => {
           TeamScreen {JSON.stringify(sampleID)} - Display players from the
           particular team. Use Flatlist to dipslay all players
         </Text>
+
+        <Player id="1" playerName="One" />
+        <Player id="2" playerName="Two" />
+        <Player id="3" playerName="Three" />
+
+        <Text> Additional players 👇🏼 👇🏼 👇🏼</Text>
       </View>
     </View>
   );

@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const Player = () => {
+const Player = ({ id, playerName }) => {
   const navigation = useNavigation();
   return (
     <View>
