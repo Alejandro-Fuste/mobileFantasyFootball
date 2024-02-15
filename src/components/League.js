@@ -1,10 +1,10 @@
-import { Button, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
 const League = ({ id }) => {
   const navigation = useNavigation();
-  console.log(id);
+
   return (
     <View>
       <Pressable

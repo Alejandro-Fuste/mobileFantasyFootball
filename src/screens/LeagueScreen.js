@@ -9,11 +9,6 @@ const LeagueScreen = ({ route }) => {
         LeagueScreen {JSON.stringify(sampleID)} - Display teams from the
         particular league
       </Text>
-
-      {/* <Button
-        title="Go to team page"
-        onPress={() => navigation.navigate("Team")}
-      /> */}
     </View>
   );
 };
