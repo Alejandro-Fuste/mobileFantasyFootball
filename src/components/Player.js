@@ -1,23 +1,25 @@
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const Team = ({ teamName, id }) => {
+const Player = () => {
   const navigation = useNavigation();
   return (
     <View>
       <Pressable
         style={styles.contentContainer}
-        onPress={() => navigation.navigate("Team", { sampleID: id, teamName })}
+        onPress={() =>
+          navigation.navigate("Player", { sampleID: id, playerName })
+        }
       >
-        <Text style={styles.team}>Team Avatar</Text>
-        <Text style={styles.team}>Team Name: {teamName}</Text>
+        <Text style={styles.player}>Player Avatar</Text>
+        <Text style={styles.player}>Player Name: {playerName}</Text>
       </Pressable>
     </View>
   );
 };
 
-export default Team;
+export default Player;
 
 const styles = StyleSheet.create({
   contentContainer: {
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: "85%",
   },
-  team: {
+  player: {
     flex: 1,
     margin: 10,
     padding: 10,

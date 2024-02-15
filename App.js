@@ -7,6 +7,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import PlayersScreen from "./src/screens/PlayersScreen";
 import DraftScreen from "./src/screens/DraftScreen";
 import LeagueScreen from "./src/screens/LeagueScreen";
+import TeamScreen from "./src/screens/TeamScreen";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StatusBar } from "expo-status-bar";
@@ -80,6 +81,7 @@ function StackNavigator() {
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="League" component={LeagueScreen} />
+      <Stack.Screen name="Team" component={TeamScreen} />
     </Stack.Navigator>
   );
 }
