@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Player2 from "../components/Player2";
+import Player from "../components/Player";
 
 const PlayersScreen = () => {
   return (
@@ -16,7 +16,7 @@ const PlayersScreen = () => {
       <View style={styles.contentContainer}>
         <Text>PlayersScreen - Diplay all players here</Text>
 
-        <Player2 playerName="Player 1" />
+        <Player playerName="Player 1" />
       </View>
     </View>
   );

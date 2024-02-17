@@ -19,9 +19,9 @@ const TeamScreen = ({ route }) => {
           particular team. Use Flatlist to dipslay all players
         </Text>
 
-        <Player id="1" playerName="One" />
-        <Player id="2" playerName="Two" />
-        <Player id="3" playerName="Three" />
+        <Player playerName="One" />
+        <Player playerName="Two" />
+        <Player playerName="Three" />
 
         <Text> Additional players 👇🏼 👇🏼 👇🏼</Text>
       </View>
