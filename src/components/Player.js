@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Modal, Pressable } from "react-native";
 import React, { useState } from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import PlayerContent from "./PlayerContent";
 
 const Player2 = ({ playerName }) => {
@@ -21,7 +22,9 @@ const Player2 = ({ playerName }) => {
               style={styles.buttonClose}
               onPress={() => setModalVisible(!modalVisible)}
             >
-              <Text>X</Text>
+              <Text>
+                <Ionicons name="close-outline" size={24} />
+              </Text>
             </Pressable>
           </View>
           <PlayerContent style={styles.contentContainer} />
