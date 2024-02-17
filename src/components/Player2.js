@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Modal, Pressable } from "react-native";
 import React, { useState } from "react";
+import PlayerContent from "./PlayerContent";
 
 const Player2 = ({ playerName }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -23,10 +24,10 @@ const Player2 = ({ playerName }) => {
               <Text>X</Text>
             </Pressable>
           </View>
-
-          <View style={styles.contentContainer}>
+          <PlayerContent style={styles.contentContainer} />
+          {/* <View style={styles.contentContainer}>
             <Text>Player info here</Text>
-          </View>
+          </View> */}
         </View>
       </Modal>
 
@@ -46,19 +47,18 @@ export default Player2;
 
 const styles = StyleSheet.create({
   modalContainer: {
-    flex: 0,
+    flex: 10,
   },
   modalHeaderView: {
     flex: 0,
     flexDirection: "row",
-    backgroundColor: "blue",
+    backgroundColor: "steelblue",
     justifyContent: "space-between",
     padding: 10,
   },
   contentContainer: {
-    // flex: 10,
     height: "100%",
-    backgroundColor: "red",
+    backgroundColor: "skyblue",
   },
   button: {
     borderRadius: 20,
