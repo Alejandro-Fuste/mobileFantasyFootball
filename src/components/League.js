@@ -2,17 +2,19 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
-const League = ({ id }) => {
+const League = ({ id, leagueName }) => {
   const navigation = useNavigation();
 
   return (
     <View>
       <Pressable
-        style={styles.contentContainer}
-        onPress={() => navigation.navigate("League", { sampleID: id })}
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() =>
+          navigation.navigate("League", { sampleID: id, leagueName })
+        }
       >
         <Text style={styles.league}>League Avatar</Text>
-        <Text style={styles.league}>League Name</Text>
+        <Text style={styles.league}>{leagueName}</Text>
       </Pressable>
     </View>
   );
@@ -34,9 +36,20 @@ const styles = StyleSheet.create({
   },
   league: {
     flex: 1,
-    margin: 10,
-    padding: 10,
     textAlign: "center",
-    backgroundColor: "#ffffff",
+  },
+  button: {
+    borderRadius: 20,
+    marginTop: 10,
+    marginBottom: 10,
+    padding: 10,
+    elevation: 2,
+    width: "100%",
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+    flex: 0,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });

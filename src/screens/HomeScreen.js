@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import League from "../components/League";
+import { getLeagues } from "../actions/getActions";
 
 const HomeScreen = () => {
+  const [leagues, setLeagues] = useState(getLeagues().payload);
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -12,9 +15,10 @@ const HomeScreen = () => {
 
       <View style={styles.contentContainer}>
         <Text>HomeScreen - Display leagues here</Text>
-        <League id="1" />
-        <League id="2" />
-        <League id="3" />
+
+        {leagues.map((c, i) => {
+          return <League key={i} leagueName={Object.keys(leagues[i])[0]} />;
+        })}
       </View>
     </View>
   );
