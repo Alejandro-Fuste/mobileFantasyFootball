@@ -9,9 +9,7 @@ const League = ({ id, leagueName }) => {
     <View>
       <Pressable
         style={[styles.button, styles.buttonOpen]}
-        onPress={() =>
-          navigation.navigate("League", { sampleID: id, leagueName })
-        }
+        onPress={() => navigation.navigate("League", { id, leagueName })}
       >
         <Text style={styles.league}>League Avatar</Text>
         <Text style={styles.league}>{leagueName}</Text>

@@ -7,11 +7,11 @@ const Team = ({ teamName, id }) => {
   return (
     <View>
       <Pressable
-        style={styles.contentContainer}
-        onPress={() => navigation.navigate("Team", { sampleID: id, teamName })}
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() => navigation.navigate("Team", { id, teamName })}
       >
         <Text style={styles.team}>Team Avatar</Text>
-        <Text style={styles.team}>Team Name: {teamName}</Text>
+        <Text style={styles.team}>{teamName}</Text>
       </Pressable>
     </View>
   );
@@ -33,9 +33,20 @@ const styles = StyleSheet.create({
   },
   team: {
     flex: 1,
-    margin: 10,
-    padding: 10,
     textAlign: "center",
-    backgroundColor: "#ffffff",
+  },
+  button: {
+    borderRadius: 20,
+    marginTop: 10,
+    marginBottom: 10,
+    padding: 10,
+    elevation: 2,
+    width: "100%",
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+    flex: 0,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });

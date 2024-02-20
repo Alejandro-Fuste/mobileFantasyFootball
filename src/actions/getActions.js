@@ -8,10 +8,10 @@ export const getLeagues = () => {
   };
 };
 
-export const getLeague = (leagueName) => {
+export const getLeague = (id) => {
   return {
     type: GET_LEAGUE,
-    payload: data["leagues"][leagueName],
+    payload: data["leagues"][id],
   };
 };
 

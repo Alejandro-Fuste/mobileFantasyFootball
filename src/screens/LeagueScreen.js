@@ -1,25 +1,28 @@
 import { Button, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Team from "../components/Team";
+import { getLeague } from "../actions/getActions";
 
 const LeagueScreen = ({ route }) => {
-  const { sampleID } = route.params;
+  const { id, leagueName } = route.params;
+  const [teams, setTeams] = useState(getLeague(leagueName, id).payload);
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text>League Avatar</Text>
-        <Text>League Name</Text>
+        <Text>{leagueName}</Text>
       </View>
 
       <View style={styles.contentContainer}>
         <Text>
-          LeagueScreen {JSON.stringify(sampleID)} - Display teams from the
-          particular league. Use Flatlist to dipslay all teams
+          LeagueScreen {JSON.stringify(id)} - Display teams from the particular
+          league. Use Flatlist to dipslay all teams
         </Text>
 
-        <Team teamName="One" id="1" />
-        <Team teamName="Two" id="2" />
-        <Team teamName="Three" id="3" />
+        {teams[leagueName].map((c, i) => {
+          return <Team key={i} id={i} teamName={c.teamName} />;
+        })}
 
         <Text> Additional teams 👇🏼 👇🏼 👇🏼</Text>
       </View>

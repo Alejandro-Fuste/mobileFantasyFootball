@@ -17,7 +17,9 @@ const HomeScreen = () => {
         <Text>HomeScreen - Display leagues here</Text>
 
         {leagues.map((c, i) => {
-          return <League key={i} leagueName={Object.keys(leagues[i])[0]} />;
+          return (
+            <League key={i} id={i} leagueName={Object.keys(leagues[i])[0]} />
+          );
         })}
       </View>
     </View>
