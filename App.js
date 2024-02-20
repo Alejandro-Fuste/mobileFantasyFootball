@@ -12,6 +12,8 @@ import TeamScreen from "./src/screens/TeamScreen";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StatusBar } from "expo-status-bar";
 
+import { getLeagues } from "./src/actions/getActions";
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
