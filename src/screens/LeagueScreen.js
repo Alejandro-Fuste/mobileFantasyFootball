@@ -5,7 +5,7 @@ import { getLeague } from "../actions/getActions";
 
 const LeagueScreen = ({ route }) => {
   const { id, leagueName } = route.params;
-  const [teams, setTeams] = useState(getLeague(leagueName, id).payload);
+  const [teams, setTeams] = useState(getLeague(id).payload);
 
   return (
     <View style={styles.container}>
