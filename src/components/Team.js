@@ -2,13 +2,20 @@ import { StyleSheet, Text, View, Pressable } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const Team = ({ teamName, id }) => {
+const Team = ({ teamName, teamId, leagueId, leagueName }) => {
   const navigation = useNavigation();
   return (
     <View>
       <Pressable
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => navigation.navigate("Team", { id, teamName })}
+        onPress={() =>
+          navigation.navigate("Team", {
+            teamId,
+            teamName,
+            leagueId,
+            leagueName,
+          })
+        }
       >
         <Text style={styles.team}>Team Avatar</Text>
         <Text style={styles.team}>{teamName}</Text>

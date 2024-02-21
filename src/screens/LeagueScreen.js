@@ -21,10 +21,16 @@ const LeagueScreen = ({ route }) => {
         </Text>
 
         {teams[leagueName].map((c, i) => {
-          return <Team key={i} id={i} teamName={c.teamName} />;
+          return (
+            <Team
+              key={i}
+              leagueName={leagueName}
+              leagueId={id}
+              teamId={i}
+              teamName={c.teamName}
+            />
+          );
         })}
-
-        <Text> Additional teams 👇🏼 👇🏼 👇🏼</Text>
       </View>
     </View>
   );

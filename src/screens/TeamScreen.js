@@ -1,9 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Player from "../components/Player";
+import { getTeam } from "../actions/getActions";
 
 const TeamScreen = ({ route }) => {
-  const { sampleID, teamName } = route.params;
+  const { leagueId, leagueName, teamId, teamName } = route.params;
+  const [team, setTeam] = useState(
+    getTeam(leagueId, leagueName, teamId).payload
+  );
+  console.log(leagueId, teamId);
+  console.log(team);
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -15,7 +21,7 @@ const TeamScreen = ({ route }) => {
         <Text>Stats content</Text>
 
         <Text>
-          TeamScreen {JSON.stringify(sampleID)} - Display players from the
+          TeamScreen {JSON.stringify(teamId)} - Display players from the
           particular team. Use Flatlist to dipslay all players
         </Text>
 
