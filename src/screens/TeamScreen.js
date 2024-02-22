@@ -2,19 +2,20 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import Player from "../components/Player";
 import { getTeam } from "../actions/getActions";
+import filterAndSortPlayers from "../utils/filterAndSortPlayers";
 
 const TeamScreen = ({ route }) => {
   const { leagueId, leagueName, teamId, teamName } = route.params;
   const [team, setTeam] = useState(
     getTeam(leagueId, leagueName, teamId).payload
   );
-  console.log(leagueId, teamId);
-  console.log(team);
+  console.log(filterAndSortPlayers(team["rosterWithNames"], "QB"));
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text>Team Avatar</Text>
-        <Text>Team Name: {teamName}</Text>
+        <Text>{teamName}</Text>
       </View>
 
       <View style={styles.contentContainer}>

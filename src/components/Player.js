@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import PlayerContent from "./PlayerContent";
 
-const Player2 = ({ playerName }) => {
+const Player = ({ playerName }) => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View>
@@ -23,7 +23,7 @@ const Player2 = ({ playerName }) => {
               onPress={() => setModalVisible(!modalVisible)}
             >
               <Text>
-                <Ionicons name="close-outline" size={24} />
+                <Ionicons name="close-outline" size={4} />
               </Text>
             </Pressable>
           </View>
@@ -43,7 +43,7 @@ const Player2 = ({ playerName }) => {
   );
 };
 
-export default Player2;
+export default Player;
 
 const styles = StyleSheet.create({
   modalContainer: {

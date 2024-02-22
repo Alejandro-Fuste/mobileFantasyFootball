@@ -1,5 +1,11 @@
 import data from "../../data/database.json";
-import { GET_LEAGUES, GET_LEAGUE, GET_TEAM, GET_PLAYERS } from "./types";
+import {
+  GET_LEAGUES,
+  GET_LEAGUE,
+  GET_TEAM,
+  GET_PLAYERS,
+  GET_PLAYER,
+} from "./types";
 
 export const getLeagues = () => {
   return {
@@ -26,5 +32,12 @@ export const getPlayers = () => {
   return {
     type: GET_PLAYERS,
     payload: data["players"],
+  };
+};
+
+export const getPlayer = (name) => {
+  return {
+    type: GET_PLAYER,
+    payload: data["players"][name],
   };
 };
