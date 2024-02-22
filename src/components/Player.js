@@ -2,9 +2,12 @@ import { StyleSheet, Text, View, Modal, Pressable } from "react-native";
 import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import PlayerContent from "./PlayerContent";
+import { getPlayer } from "../actions/getActions";
 
-const Player = ({ playerName }) => {
+const Player = ({ playerName, grade }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [player, setPlayer] = useState(getPlayer(playerName).payload);
+  console.log(player);
   return (
     <View>
       <Modal
@@ -35,9 +38,9 @@ const Player = ({ playerName }) => {
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text style={styles.player}>Player Avatar</Text>
-        <Text style={styles.player}>Player Name: {playerName}</Text>
-        {/* <Text style={styles.textStyle}>Show Modal</Text> */}
+        <Text>Player Avatar</Text>
+        <Text>{playerName}</Text>
+        <Text>{grade}</Text>
       </Pressable>
     </View>
   );

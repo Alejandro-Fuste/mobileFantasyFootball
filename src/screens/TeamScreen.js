@@ -9,7 +9,6 @@ const TeamScreen = ({ route }) => {
   const [team, setTeam] = useState(
     getTeam(leagueId, leagueName, teamId).payload
   );
-  console.log(filterAndSortPlayers(team["rosterWithNames"], "QB"));
 
   return (
     <View style={styles.container}>
@@ -26,11 +25,15 @@ const TeamScreen = ({ route }) => {
           particular team. Use Flatlist to dipslay all players
         </Text>
 
-        <Player playerName="One" />
-        <Player playerName="Two" />
-        <Player playerName="Three" />
-
-        <Text> Additional players 👇🏼 👇🏼 👇🏼</Text>
+        {filterAndSortPlayers(team["rosterWithNames"], "QB").map((c, i) => {
+          return (
+            <Player
+              key={i}
+              playerName={c.name}
+              grade={c.overallGrade.grade.letter}
+            />
+          );
+        })}
       </View>
     </View>
   );
