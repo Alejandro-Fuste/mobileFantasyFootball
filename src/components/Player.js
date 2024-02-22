@@ -26,11 +26,11 @@ const Player = ({ playerName, grade }) => {
               onPress={() => setModalVisible(!modalVisible)}
             >
               <Text>
-                <Ionicons name="close-outline" size={4} />
+                <Ionicons name="close-outline" size={24} />
               </Text>
             </Pressable>
           </View>
-          <PlayerContent style={styles.contentContainer} />
+          <PlayerContent style={styles.contentContainer} data={player} />
         </View>
       </Modal>
 
