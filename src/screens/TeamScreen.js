@@ -25,7 +25,41 @@ const TeamScreen = ({ route }) => {
           particular team. Use Flatlist to dipslay all players
         </Text>
 
+        <Text>QB</Text>
         {filterAndSortPlayers(team["rosterWithNames"], "QB").map((c, i) => {
+          return (
+            <Player
+              key={i}
+              playerName={c.name}
+              grade={c.overallGrade.grade.letter}
+            />
+          );
+        })}
+
+        <Text>RB</Text>
+        {filterAndSortPlayers(team["rosterWithNames"], "RB").map((c, i) => {
+          return (
+            <Player
+              key={i}
+              playerName={c.name}
+              grade={c.overallGrade.grade.letter}
+            />
+          );
+        })}
+
+        <Text>WR</Text>
+        {filterAndSortPlayers(team["rosterWithNames"], "WR").map((c, i) => {
+          return (
+            <Player
+              key={i}
+              playerName={c.name}
+              grade={c.overallGrade.grade.letter}
+            />
+          );
+        })}
+
+        <Text>TE</Text>
+        {filterAndSortPlayers(team["rosterWithNames"], "TE").map((c, i) => {
           return (
             <Player
               key={i}
