@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  SectionList,
+} from "react-native";
 import React, { useState } from "react";
 import Player from "../components/Player";
 import { getTeam } from "../actions/getActions";
@@ -10,6 +16,25 @@ const TeamScreen = ({ route }) => {
     getTeam(leagueId, leagueName, teamId).payload
   );
 
+  const DATA = [
+    {
+      title: "QB",
+      data: filterAndSortPlayers(team["rosterWithNames"], "QB"),
+    },
+    {
+      title: "RB",
+      data: filterAndSortPlayers(team["rosterWithNames"], "RB"),
+    },
+    {
+      title: "WR",
+      data: filterAndSortPlayers(team["rosterWithNames"], "WR"),
+    },
+    {
+      title: "TE",
+      data: filterAndSortPlayers(team["rosterWithNames"], "TE"),
+    },
+  ];
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -20,54 +45,22 @@ const TeamScreen = ({ route }) => {
       <View style={styles.contentContainer}>
         <Text>Stats content</Text>
 
-        <Text>
-          TeamScreen {JSON.stringify(teamId)} - Display players from the
-          particular team. Use Flatlist to dipslay all players
-        </Text>
-
-        <Text>QB</Text>
-        {filterAndSortPlayers(team["rosterWithNames"], "QB").map((c, i) => {
-          return (
-            <Player
-              key={i}
-              playerName={c.name}
-              grade={c.overallGrade.grade.letter}
-            />
-          );
-        })}
-
-        <Text>RB</Text>
-        {filterAndSortPlayers(team["rosterWithNames"], "RB").map((c, i) => {
-          return (
-            <Player
-              key={i}
-              playerName={c.name}
-              grade={c.overallGrade.grade.letter}
-            />
-          );
-        })}
-
-        <Text>WR</Text>
-        {filterAndSortPlayers(team["rosterWithNames"], "WR").map((c, i) => {
-          return (
-            <Player
-              key={i}
-              playerName={c.name}
-              grade={c.overallGrade.grade.letter}
-            />
-          );
-        })}
-
-        <Text>TE</Text>
-        {filterAndSortPlayers(team["rosterWithNames"], "TE").map((c, i) => {
-          return (
-            <Player
-              key={i}
-              playerName={c.name}
-              grade={c.overallGrade.grade.letter}
-            />
-          );
-        })}
+        <SafeAreaView>
+          <SectionList
+            sections={DATA}
+            keyExtractor={(item, index) => item + index}
+            renderItem={({ item, index }) => (
+              <Player
+                key={index}
+                playerName={item.name}
+                grade={item.overallGrade.grade.letter}
+              />
+            )}
+            renderSectionHeader={({ section: { title } }) => (
+              <Text style={styles.header}>{title}</Text>
+            )}
+          ></SectionList>
+        </SafeAreaView>
       </View>
     </View>
   );
@@ -89,6 +82,18 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "skyblue",
     alignItems: "center",
+  },
+  item: {
+    backgroundColor: "#f9c2ff",
+    padding: 10,
+    marginVertical: 8,
+  },
+  header: {
+    fontSize: 12,
+    backgroundColor: "#fff",
+  },
+  title: {
+    fontSize: 10,
   },
 });
 
