@@ -7,7 +7,7 @@ import { getPlayer } from "../actions/getActions";
 const Player = ({ playerName, grade }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [player, setPlayer] = useState(getPlayer(playerName).payload);
-  console.log(player);
+
   return (
     <View>
       <Modal
