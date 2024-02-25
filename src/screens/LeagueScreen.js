@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
 import React, { useState } from "react";
 import Team from "../components/Team";
 import { getLeague } from "../actions/getActions";
@@ -15,12 +15,24 @@ const LeagueScreen = ({ route }) => {
       </View>
 
       <View style={styles.contentContainer}>
-        <Text>
-          LeagueScreen {JSON.stringify(id)} - Display teams from the particular
-          league. Use Flatlist to dipslay all teams
-        </Text>
+        <Text>Teams</Text>
 
-        {teams[leagueName].map((c, i) => {
+        <SafeAreaView style={styles.container}>
+          <FlatList
+            data={teams[leagueName]}
+            renderItem={({ item, index }) => (
+              <Team
+                key={index}
+                leagueName={leagueName}
+                leagueId={id}
+                teamId={index}
+                teamName={item.teamName}
+              />
+            )}
+            keyExtractor={(item) => item.ownerId}
+          />
+        </SafeAreaView>
+        {/* {teams[leagueName].map((c, i) => {
           return (
             <Team
               key={i}
@@ -30,7 +42,7 @@ const LeagueScreen = ({ route }) => {
               teamName={c.teamName}
             />
           );
-        })}
+        })} */}
       </View>
     </View>
   );
