@@ -32,17 +32,6 @@ const LeagueScreen = ({ route }) => {
             keyExtractor={(item) => item.ownerId}
           />
         </SafeAreaView>
-        {/* {teams[leagueName].map((c, i) => {
-          return (
-            <Team
-              key={i}
-              leagueName={leagueName}
-              leagueId={id}
-              teamId={i}
-              teamName={c.teamName}
-            />
-          );
-        })} */}
       </View>
     </View>
   );
