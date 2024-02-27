@@ -4,7 +4,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import PlayerContent from "./PlayerContent";
 import { getPlayer } from "../actions/getActions";
 
-const Player = ({ playerName, grade }) => {
+const Player = ({ playerName }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [player, setPlayer] = useState(getPlayer(playerName).payload);
 
@@ -40,7 +40,7 @@ const Player = ({ playerName, grade }) => {
       >
         <Text>Player Avatar</Text>
         <Text>{playerName}</Text>
-        <Text>{grade}</Text>
+        <Text>{player.overallGrade.grade.letter}</Text>
       </Pressable>
     </View>
   );
