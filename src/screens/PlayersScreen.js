@@ -1,8 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
+import React, { useState } from "react";
 import Player from "../components/Player";
+import { getPlayers } from "../actions/getActions";
 
 const PlayersScreen = () => {
+  const [players, setPlayers] = useState(getPlayers().payload);
+  const playerNameArray = Object.keys(players);
+
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -14,9 +18,13 @@ const PlayersScreen = () => {
       </View>
 
       <View style={styles.contentContainer}>
-        <Text>PlayersScreen - Diplay all players here</Text>
-
-        <Player playerName="Player 1" />
+        <SafeAreaView style={styles.container}>
+          <FlatList
+            data={playerNameArray}
+            renderItem={({ item }) => <Player playerName={item} />}
+            keyExtractor={(item) => item}
+          />
+        </SafeAreaView>
       </View>
     </View>
   );
