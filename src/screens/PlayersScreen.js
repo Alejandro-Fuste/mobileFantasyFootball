@@ -1,7 +1,15 @@
-import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  SafeAreaView,
+  FlatList,
+} from "react-native";
 import React, { useState } from "react";
 import Player from "../components/Player";
 import { getPlayers } from "../actions/getActions";
+import filterAndSortPlayers from "../utils/filterAndSortPlayers";
 
 const PlayersScreen = () => {
   const [players, setPlayers] = useState(getPlayers().payload);
@@ -14,7 +22,25 @@ const PlayersScreen = () => {
       </View>
 
       <View style={styles.subHeaderContainer}>
-        <Text>Button group to filter players by position</Text>
+        <Pressable style={[styles.buttonContainer, styles.button, styles.All]}>
+          <Text>All</Text>
+        </Pressable>
+
+        <Pressable style={[styles.buttonContainer, styles.button]}>
+          <Text>QB</Text>
+        </Pressable>
+
+        <Pressable style={[styles.buttonContainer, styles.button]}>
+          <Text>RB</Text>
+        </Pressable>
+
+        <Pressable style={[styles.buttonContainer, styles.button]}>
+          <Text>WR</Text>
+        </Pressable>
+
+        <Pressable style={[styles.buttonContainer, styles.TE]}>
+          <Text>TE</Text>
+        </Pressable>
       </View>
 
       <View style={styles.contentContainer}>
@@ -47,11 +73,29 @@ const styles = StyleSheet.create({
     borderColor: "black",
   },
   subHeaderContainer: {
-    flex: 1,
+    flex: 0,
     padding: 10,
     flexDirection: "row",
     backgroundColor: "steelblue",
-    justifyContent: "space-evenly",
+  },
+  buttonContainer: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    borderRightWidth: 1,
+    borderRightColor: "gray",
+  },
+  All: {
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+  },
+  TE: {
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
   },
   contentContainer: {
     flex: 10,
