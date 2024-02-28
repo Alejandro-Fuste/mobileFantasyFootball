@@ -14,6 +14,7 @@ import filterAndSortPlayers from "../utils/filterAndSortPlayers";
 const PlayersScreen = () => {
   const [players, setPlayers] = useState(getPlayers().payload);
   const playerNameArray = Object.keys(players);
+  const [position, setPosition] = useState("All");
 
   return (
     <View style={styles.container}>
@@ -22,23 +23,68 @@ const PlayersScreen = () => {
       </View>
 
       <View style={styles.subHeaderContainer}>
-        <Pressable style={[styles.buttonContainer, styles.button, styles.All]}>
+        <Pressable
+          onPress={() => setPosition("All")}
+          style={
+            position === "All"
+              ? [
+                  styles.buttonContainer,
+                  styles.button,
+                  styles.All,
+                  styles.selected,
+                ]
+              : [styles.buttonContainer, styles.All, styles.button]
+          }
+        >
           <Text>All</Text>
         </Pressable>
 
-        <Pressable style={[styles.buttonContainer, styles.button]}>
+        <Pressable
+          onPress={() => setPosition("QB")}
+          style={
+            position === "QB"
+              ? [styles.buttonContainer, styles.button, styles.selected]
+              : [styles.buttonContainer, styles.button]
+          }
+        >
           <Text>QB</Text>
         </Pressable>
 
-        <Pressable style={[styles.buttonContainer, styles.button]}>
+        <Pressable
+          onPress={() => setPosition("RB")}
+          style={
+            position === "RB"
+              ? [styles.buttonContainer, styles.button, styles.selected]
+              : [styles.buttonContainer, styles.button]
+          }
+        >
           <Text>RB</Text>
         </Pressable>
 
-        <Pressable style={[styles.buttonContainer, styles.button]}>
+        <Pressable
+          onPress={() => setPosition("WR")}
+          style={
+            position === "WR"
+              ? [styles.buttonContainer, styles.button, styles.selected]
+              : [styles.buttonContainer, styles.button]
+          }
+        >
           <Text>WR</Text>
         </Pressable>
 
-        <Pressable style={[styles.buttonContainer, styles.TE]}>
+        <Pressable
+          onPress={() => setPosition("TE")}
+          style={
+            position === "TE"
+              ? [
+                  styles.buttonContainer,
+                  styles.button,
+                  styles.TE,
+                  styles.selected,
+                ]
+              : [styles.buttonContainer, styles.TE, styles.button]
+          }
+        >
           <Text>TE</Text>
         </Pressable>
       </View>
@@ -81,13 +127,16 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     padding: 10,
-    backgroundColor: "white",
+    backgroundColor: "grey",
     alignItems: "center",
     justifyContent: "center",
   },
   button: {
     borderRightWidth: 1,
     borderRightColor: "gray",
+  },
+  selected: {
+    backgroundColor: "white",
   },
   All: {
     borderTopLeftRadius: 10,
