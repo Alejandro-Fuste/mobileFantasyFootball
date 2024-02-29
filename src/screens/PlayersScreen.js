@@ -29,7 +29,7 @@ const PlayersScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>Players Page</Text>
+        <Text style={styles.headerText}>Players</Text>
       </View>
 
       <View style={styles.subHeaderContainer}>
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     flex: 1,
     padding: 10,
-    paddingTop: 28,
+    paddingTop: 24,
     flexDirection: "row",
     backgroundColor: "white",
     justifyContent: "space-evenly",
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerText: {
-    fontWeight: "500",
-    fontSize: 18,
+    fontWeight: "600",
+    fontSize: 16,
   },
 });
