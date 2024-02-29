@@ -6,15 +6,25 @@ import {
   SafeAreaView,
   FlatList,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Player from "../components/Player";
 import { getPlayers } from "../actions/getActions";
 import filterAndSortPlayers from "../utils/filterAndSortPlayers";
+import transformedArray from "../utils/transformToArray";
 
 const PlayersScreen = () => {
-  const [players, setPlayers] = useState(getPlayers().payload);
-  const playerNameArray = Object.keys(players);
+  const players = getPlayers().payload;
+  const [playerNameArray, setPlayerNameArray] = useState(Object.keys(players));
   const [position, setPosition] = useState("All");
+
+  useEffect(() => {
+    if (position != "All") {
+      let array = transformedArray(position);
+      setPlayerNameArray(array);
+    } else {
+      setPlayerNameArray(Object.keys(players));
+    }
+  }, [position]);
 
   return (
     <View style={styles.container}>
