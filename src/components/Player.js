@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     backgroundColor: "skyblue",
   },
   button: {
-    borderRadius: 20,
+    borderRadius: 10,
     marginTop: 10,
     marginBottom: 10,
     padding: 10,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   buttonOpen: {
-    backgroundColor: "#F194FF",
+    backgroundColor: "white",
     flex: 0,
     flexDirection: "row",
     justifyContent: "space-between",

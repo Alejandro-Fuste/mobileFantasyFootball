@@ -29,7 +29,7 @@ const PlayersScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text>Players Page</Text>
+        <Text style={styles.headerText}>Players Page</Text>
       </View>
 
       <View style={styles.subHeaderContainer}>
@@ -37,13 +37,8 @@ const PlayersScreen = () => {
           onPress={() => setPosition("All")}
           style={
             position === "All"
-              ? [
-                  styles.buttonContainer,
-                  styles.button,
-                  styles.All,
-                  styles.selected,
-                ]
-              : [styles.buttonContainer, styles.All, styles.button]
+              ? [styles.buttonContainer, styles.All, styles.selected]
+              : [styles.buttonContainer, styles.All]
           }
         >
           <Text>All</Text>
@@ -53,8 +48,8 @@ const PlayersScreen = () => {
           onPress={() => setPosition("QB")}
           style={
             position === "QB"
-              ? [styles.buttonContainer, styles.button, styles.selected]
-              : [styles.buttonContainer, styles.button]
+              ? [styles.buttonContainer, styles.selected]
+              : [styles.buttonContainer]
           }
         >
           <Text>QB</Text>
@@ -64,8 +59,8 @@ const PlayersScreen = () => {
           onPress={() => setPosition("RB")}
           style={
             position === "RB"
-              ? [styles.buttonContainer, styles.button, styles.selected]
-              : [styles.buttonContainer, styles.button]
+              ? [styles.buttonContainer, styles.selected]
+              : [styles.buttonContainer]
           }
         >
           <Text>RB</Text>
@@ -75,8 +70,8 @@ const PlayersScreen = () => {
           onPress={() => setPosition("WR")}
           style={
             position === "WR"
-              ? [styles.buttonContainer, styles.button, styles.selected]
-              : [styles.buttonContainer, styles.button]
+              ? [styles.buttonContainer, styles.selected]
+              : [styles.buttonContainer]
           }
         >
           <Text>WR</Text>
@@ -86,13 +81,8 @@ const PlayersScreen = () => {
           onPress={() => setPosition("TE")}
           style={
             position === "TE"
-              ? [
-                  styles.buttonContainer,
-                  styles.button,
-                  styles.TE,
-                  styles.selected,
-                ]
-              : [styles.buttonContainer, styles.TE, styles.button]
+              ? [styles.buttonContainer, styles.TE, styles.selected]
+              : [styles.buttonContainer, styles.TE]
           }
         >
           <Text>TE</Text>
@@ -121,29 +111,24 @@ const styles = StyleSheet.create({
   headerContainer: {
     flex: 1,
     padding: 10,
-    paddingTop: 50,
+    paddingTop: 28,
     flexDirection: "row",
-    backgroundColor: "steelblue",
+    backgroundColor: "white",
     justifyContent: "space-evenly",
-    borderBottomWidth: 1,
-    borderColor: "black",
+    alignItems: "flex-end",
   },
   subHeaderContainer: {
     flex: 0,
     padding: 10,
     flexDirection: "row",
-    backgroundColor: "steelblue",
   },
   buttonContainer: {
     flex: 1,
+    borderColor: "white",
+    borderWidth: 1,
     padding: 10,
-    backgroundColor: "grey",
     alignItems: "center",
     justifyContent: "center",
-  },
-  button: {
-    borderRightWidth: 1,
-    borderRightColor: "gray",
   },
   selected: {
     backgroundColor: "white",
@@ -159,7 +144,10 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 10,
     padding: 10,
-    backgroundColor: "skyblue",
     alignItems: "center",
+  },
+  headerText: {
+    fontWeight: "500",
+    fontSize: 18,
   },
 });
