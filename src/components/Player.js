@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Modal, Pressable } from "react-native";
+import { StyleSheet, Text, View, Modal, Pressable, Image } from "react-native";
 import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import PlayerContent from "./PlayerContent";
@@ -38,7 +38,7 @@ const Player = ({ playerName }) => {
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Text>Player Avatar</Text>
+        <Image src={player.headShot} style={styles.headShot} />
         <Text>{playerName}</Text>
         <Text>{player.overallGrade.grade.letter}</Text>
       </Pressable>
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
   },
   buttonClose: {
     backgroundColor: "#2196F3",
@@ -89,5 +90,9 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+  },
+  headShot: {
+    width: 66,
+    height: 66,
   },
 });
