@@ -80,7 +80,11 @@ function TabNavigator() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        title: "",
+      }}
+    >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="League" component={LeagueScreen} />
       <Stack.Screen name="Team" component={TeamScreen} />

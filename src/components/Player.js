@@ -20,7 +20,6 @@ const Player = ({ playerName }) => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalHeaderView}>
-            <Text style={styles.modalText}> {playerName}</Text>
             <Pressable
               style={styles.buttonClose}
               onPress={() => setModalVisible(!modalVisible)}
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     backgroundColor: "steelblue",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     padding: 10,
   },
   contentContainer: {
@@ -82,7 +81,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonClose: {
-    backgroundColor: "#2196F3",
     padding: 5,
   },
   textStyle: {

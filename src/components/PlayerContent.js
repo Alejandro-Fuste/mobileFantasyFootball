@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import determinePositionOpportunity from "../utils/determinePositionOpportunity";
 
 const PlayerContent = ({ data }) => {
   const {
     name,
+    headShot,
     position,
     team,
     overallGrade,
@@ -16,13 +17,13 @@ const PlayerContent = ({ data }) => {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.subHeader1Container}>
-          <Text>Player Pic</Text>
-          <Text>{name}</Text>
-        </View>
+          <Image src={headShot} style={styles.headShot} />
 
-        <View style={styles.subHeader2Container}>
-          <Text>{position}</Text>
-          <Text>{team}</Text>
+          <View style={styles.subHeader2Container}>
+            <Text>{name}</Text>
+            <Text>{position}</Text>
+            <Text>{team}</Text>
+          </View>
         </View>
 
         <View style={styles.contentContainer}>
@@ -84,25 +85,34 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flex: 1,
-    padding: 10,
+    padding: 0,
     backgroundColor: "steelblue",
     justifyContent: "center",
   },
   subHeader1Container: {
+    flex: 1,
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "flex-end",
+    marginTop: 5,
+    marginRight: 10,
+    marginBottom: 50,
+    marginLeft: 30,
   },
   subHeader2Container: {
     flex: 1,
     padding: 10,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
   contentContainer: {
     flex: 10,
     padding: 10,
-    backgroundColor: "skyblue",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "space-evenly",
+  },
+  headShot: {
+    width: 100,
+    height: 100,
   },
 });
