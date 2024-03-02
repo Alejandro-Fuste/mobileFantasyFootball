@@ -9,7 +9,7 @@ import {
 import React, { useState, useEffect } from "react";
 import Player from "../components/Player";
 import { getPlayers } from "../actions/getActions";
-import filterAndSortPlayers from "../utils/filterAndSortPlayers";
+
 import transformedArray from "../utils/transformToArray";
 
 const PlayersScreen = () => {
@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingTop: 24,
     flexDirection: "row",
-    backgroundColor: "white",
     justifyContent: "space-evenly",
     alignItems: "flex-end",
   },
