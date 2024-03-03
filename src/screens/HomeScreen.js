@@ -9,13 +9,10 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.logo}>Logo</Text>
-        <Text style={styles.logo}>Title</Text>
+        <Image src={"assets/logo.png"} />
       </View>
 
       <View style={styles.contentContainer}>
-        <Text>HomeScreen - Display leagues here</Text>
-
         {leagues.map((c, i) => {
           return (
             <League key={i} id={i} leagueName={Object.keys(leagues[i])[0]} />
@@ -31,12 +28,12 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#122d42",
   },
   headerContainer: {
     flex: 1,
     padding: 10,
     flexDirection: "row",
-    backgroundColor: "steelblue",
     justifyContent: "space-evenly",
   },
   logo: {
@@ -46,7 +43,6 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 10,
     padding: 10,
-    backgroundColor: "skyblue",
     alignItems: "center",
   },
 });

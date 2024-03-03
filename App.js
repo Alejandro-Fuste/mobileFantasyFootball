@@ -1,3 +1,4 @@
+import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -11,8 +12,6 @@ import TeamScreen from "./src/screens/TeamScreen";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StatusBar } from "expo-status-bar";
-
-import { getLeagues } from "./src/actions/getActions";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -30,13 +29,20 @@ function TabNavigator() {
         name="Leagues"
         component={StackNavigator}
         options={{
-          tabBarLabel: "Leagues",
+          tabBarStyle: { backgroundColor: "#122d42" },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontSize: 10, color: focused ? "#30D5C8" : "#8e8e93" }}
+            >
+              Leagues
+            </Text>
+          ),
           tabBarIcon: (tabInfo) => {
             return (
               <Ionicons
                 name="list-circle"
                 size={24}
-                color={tabInfo.focused ? "#000000" : "#8e8e93"}
+                color={tabInfo.focused ? "#30D5C8" : "#8e8e93"}
               />
             );
           },
@@ -46,13 +52,20 @@ function TabNavigator() {
         name="Players"
         component={PlayersScreen}
         options={{
-          tabBarLabel: "Players",
+          tabBarStyle: { backgroundColor: "#122d42" },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontSize: 10, color: focused ? "#30D5C8" : "#8e8e93" }}
+            >
+              Players
+            </Text>
+          ),
           tabBarIcon: (tabInfo) => {
             return (
               <Ionicons
                 name="people-circle-outline"
                 size={24}
-                color={tabInfo.focused ? "#000000" : "#8e8e93"}
+                color={tabInfo.focused ? "#30D5C8" : "#8e8e93"}
               />
             );
           },
@@ -62,13 +75,20 @@ function TabNavigator() {
         name="Draft"
         component={DraftScreen}
         options={{
-          tabBarLabel: "Draft",
+          tabBarStyle: { backgroundColor: "#122d42" },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontSize: 10, color: focused ? "#30D5C8" : "#8e8e93" }}
+            >
+              Draft
+            </Text>
+          ),
           tabBarIcon: (tabInfo) => {
             return (
               <Ionicons
                 name="american-football"
                 size={24}
-                color={tabInfo.focused ? "#000000" : "#8e8e93"}
+                color={tabInfo.focused ? "#30D5C8" : "#8e8e93"}
               />
             );
           },
