@@ -20,8 +20,6 @@ function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: "#000000",
-        tabBarInactiveTintColor: "#8e8e93",
         headerShown: false,
       }}
     >
@@ -29,7 +27,11 @@ function TabNavigator() {
         name="Leagues"
         component={StackNavigator}
         options={{
-          tabBarStyle: { backgroundColor: "#122d42" },
+          tabBarTestID: "Leagues",
+          tabBarStyle: {
+            backgroundColor: "#122d42",
+            borderTopColor: "#30D5C8",
+          },
           tabBarLabel: ({ focused }) => (
             <Text
               style={{ fontSize: 10, color: focused ? "#30D5C8" : "#8e8e93" }}
@@ -52,6 +54,7 @@ function TabNavigator() {
         name="Players"
         component={PlayersScreen}
         options={{
+          tabBarTestID: "Players",
           tabBarStyle: { backgroundColor: "#122d42" },
           tabBarLabel: ({ focused }) => (
             <Text
@@ -75,6 +78,7 @@ function TabNavigator() {
         name="Draft"
         component={DraftScreen}
         options={{
+          tabBarTestID: "Draft",
           tabBarStyle: { backgroundColor: "#122d42" },
           tabBarLabel: ({ focused }) => (
             <Text
@@ -103,9 +107,21 @@ function StackNavigator() {
     <Stack.Navigator
       screenOptions={{
         title: "",
+        headerStyle: { backgroundColor: "#122d42" },
+        headerTintColor: "#30D5C8",
       }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: "#122d42",
+            borderBottomColor: "#122d42",
+          },
+          headerShadowVisible: false,
+        }}
+      />
       <Stack.Screen name="League" component={LeagueScreen} />
       <Stack.Screen name="Team" component={TeamScreen} />
     </Stack.Navigator>
