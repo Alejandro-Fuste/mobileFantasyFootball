@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import League from "../components/League";
 import { getLeagues } from "../actions/getActions";
+import Logo from "../../assets/Logo.svg";
 
 const HomeScreen = () => {
   const [leagues, setLeagues] = useState(getLeagues().payload);
@@ -9,7 +10,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Image src={"assets/logo.png"} />
+        <Logo width="100%" height="100%" />
       </View>
 
       <View style={styles.contentContainer}>
@@ -32,9 +33,11 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flex: 1,
-    padding: 10,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    position: "relative",
+    left: -50,
+    paddingRight: 10,
+    paddingBottom: 10,
+    paddingLeft: 10,
   },
   logo: {
     width: 66,
