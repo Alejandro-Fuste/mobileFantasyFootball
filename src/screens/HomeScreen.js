@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import League from "../components/League";
 import { getLeagues } from "../actions/getActions";
 import Logo from "../../assets/Logo.svg";
+import { useFonts } from "expo-font";
 
 const HomeScreen = () => {
   const [leagues, setLeagues] = useState(getLeagues().payload);
+  const [fontsLoaded] = useFonts({
+    "Roboto-Condensed": require("../../assets/fonts/RobotoCondensed-Medium.ttf"),
+  });
 
   return (
     <View style={styles.container}>
@@ -50,13 +54,13 @@ const styles = StyleSheet.create({
     height: 58,
   },
   leagueFont: {
-    fontFamily: "RobotoCondensed-Medium",
+    fontFamily: "Roboto-Condensed",
     fontSize: 20,
     fontWeight: "500",
     color: "white",
   },
   instructionFont: {
-    fontFamily: "RobotoCondensed-Medium",
+    fontFamily: "Roboto",
     fontSize: 14,
     color: "white",
   },
