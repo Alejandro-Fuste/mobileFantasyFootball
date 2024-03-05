@@ -2,6 +2,7 @@ import data from "../../data/database.json";
 import {
   GET_LEAGUES,
   GET_LEAGUE,
+  GET_LEAGUE_DETAILS,
   GET_TEAM,
   GET_PLAYERS,
   GET_PLAYER,
@@ -18,6 +19,13 @@ export const getLeague = (id) => {
   return {
     type: GET_LEAGUE,
     payload: data["leagues"][id],
+  };
+};
+
+export const getLeagueDetails = (id) => {
+  return {
+    type: GET_LEAGUE_DETAILS,
+    payload: data["leagues"][id]["details"],
   };
 };
 
