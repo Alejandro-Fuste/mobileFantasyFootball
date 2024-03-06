@@ -1,9 +1,10 @@
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
-const Team = ({ teamName, teamId, leagueId, leagueName }) => {
+const Team = ({ teamName, teamId, leagueId, leagueName, avatar }) => {
   const navigation = useNavigation();
+
   return (
     <View>
       <Pressable
@@ -17,7 +18,14 @@ const Team = ({ teamName, teamId, leagueId, leagueName }) => {
           })
         }
       >
-        <Text style={styles.team}>Team Avatar</Text>
+        <View>
+          <Image
+            source={{
+              uri: `https://sleepercdn.com/avatars/thumbs/${avatar}`,
+            }}
+            style={styles.avatar}
+          />
+        </View>
         <Text style={styles.team}>{teamName}</Text>
       </Pressable>
     </View>
@@ -37,6 +45,11 @@ const styles = StyleSheet.create({
     borderColor: "#ffffff",
     borderRadius: 5,
     width: "85%",
+  },
+  avatar: {
+    width: 50,
+    height: 50,
+    resizeMode: "cover",
   },
   team: {
     flex: 1,

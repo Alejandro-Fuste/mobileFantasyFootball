@@ -11,12 +11,11 @@ const LeagueScreen = ({ route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text>{leagueName}</Text>
+        {/* <Text>{leagueName}</Text> */}
+        <Text style={styles.teamsText}>Teams</Text>
       </View>
 
       <View style={styles.contentContainer}>
-        <Text>Teams</Text>
-
         <SafeAreaView style={styles.container}>
           <FlatList
             data={teams[leagueName]}
@@ -43,18 +42,29 @@ export default LeagueScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#122d42",
+    padding: 10,
   },
   headerContainer: {
-    flex: 1,
-    padding: 10,
+    flex: 0,
+    // padding: 5,
+    marginRight: 5,
+    marginLeft: 5,
     flexDirection: "row",
-    backgroundColor: "steelblue",
-    justifyContent: "space-evenly",
+    borderBottomWidth: 1,
+    borderBottomColor: "white",
+  },
+  teamsText: {
+    fontSize: 22,
+    fontWeight: "700",
+    color: "white",
+    marginTop: 10,
+    marginBottom: 10,
+    textAlign: "left",
   },
   contentContainer: {
     flex: 10,
     padding: 10,
-    backgroundColor: "skyblue",
     alignItems: "center",
   },
 });
