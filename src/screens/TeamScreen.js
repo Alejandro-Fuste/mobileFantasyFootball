@@ -4,6 +4,7 @@ import {
   View,
   SafeAreaView,
   SectionList,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import Player from "../components/Player";
@@ -11,10 +12,11 @@ import { getTeam } from "../actions/getActions";
 import filterAndSortPlayers from "../utils/filterAndSortPlayers";
 
 const TeamScreen = ({ route }) => {
-  const { leagueId, leagueName, teamId, teamName } = route.params;
+  const { leagueId, leagueName, teamId, teamName, avatar } = route.params;
   const [team, setTeam] = useState(
     getTeam(leagueId, leagueName, teamId).payload
   );
+  console.log(team);
 
   const DATA = [
     {
@@ -38,7 +40,15 @@ const TeamScreen = ({ route }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text>Team Avatar</Text>
+        <View>
+          <Image
+            source={{
+              uri: `https://sleepercdn.com/avatars/thumbs/${team.avatar}`,
+            }}
+            style={styles.avatar}
+          />
+        </View>
+
         <Text>{teamName}</Text>
       </View>
 
@@ -91,6 +101,11 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 12,
     backgroundColor: "#fff",
+  },
+  avatar: {
+    width: 50,
+    height: 50,
+    resizeMode: "cover",
   },
   title: {
     fontSize: 10,

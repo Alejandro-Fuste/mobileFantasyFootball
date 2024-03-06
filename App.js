@@ -135,7 +135,7 @@ function StackNavigator() {
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style={{ color: "white" }}></StatusBar>
+      <StatusBar style={"auto"}></StatusBar>
       <TabNavigator />
     </NavigationContainer>
   );

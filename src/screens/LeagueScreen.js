@@ -6,11 +6,11 @@ import { getLeague } from "../actions/getActions";
 const LeagueScreen = ({ route }) => {
   const { id, leagueName } = route.params;
   const [teams, setTeams] = useState(getLeague(id).payload);
+  console.log(teams);
 
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text>League Avatar</Text>
         <Text>{leagueName}</Text>
       </View>
 
@@ -27,6 +27,7 @@ const LeagueScreen = ({ route }) => {
                 leagueId={id}
                 teamId={index}
                 teamName={item.teamName}
+                avatar={item.avatar}
               />
             )}
             keyExtractor={(item) => item.ownerId}
