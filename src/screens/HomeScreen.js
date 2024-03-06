@@ -13,10 +13,6 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.headerContainer, styles.paddingBottom]}>
-        <Logo width="100%" height="100%" />
-      </View>
-
       <View>
         <Text style={[styles.leagueFont, styles.paddingBottom]}>Leagues</Text>
         <Text style={[styles.instructionFont, styles.paddingBottom]}>
@@ -54,20 +50,23 @@ const styles = StyleSheet.create({
     height: 58,
   },
   leagueFont: {
-    fontFamily: "Roboto-Condensed",
-    fontSize: 20,
+    // fontFamily: "Roboto-Condensed",
+    fontSize: 22,
     fontWeight: "500",
     color: "white",
+    marginTop: 10,
+    marginBottom: 10,
   },
   instructionFont: {
-    fontFamily: "Roboto",
-    fontSize: 14,
+    // fontFamily: "Roboto",
+    fontSize: 18,
     color: "white",
   },
   contentContainer: {
     flex: 10,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 50,
   },
   paddingBottom: {
     paddingBottom: 10,

@@ -9,6 +9,7 @@ import PlayersScreen from "./src/screens/PlayersScreen";
 import DraftScreen from "./src/screens/DraftScreen";
 import LeagueScreen from "./src/screens/LeagueScreen";
 import TeamScreen from "./src/screens/TeamScreen";
+import LogoHeader from "./src/components/LogoHeader";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { StatusBar } from "expo-status-bar";
@@ -105,16 +106,19 @@ function TabNavigator() {
 function StackNavigator() {
   return (
     <Stack.Navigator
-      screenOptions={{
-        title: "",
-        headerStyle: { backgroundColor: "#122d42" },
-        headerTintColor: "#30D5C8",
-      }}
+      screenOptions={
+        {
+          // title: "",
+          // headerStyle: { backgroundColor: "#122d42" },
+          // headerTintColor: "#30D5C8",
+        }
+      }
     >
       <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
+          headerTitle: (props) => <LogoHeader {...props} />,
           headerStyle: {
             backgroundColor: "#122d42",
             borderBottomColor: "#122d42",
@@ -131,7 +135,7 @@ function StackNavigator() {
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style="auto"></StatusBar>
+      <StatusBar style={{ color: "white" }}></StatusBar>
       <TabNavigator />
     </NavigationContainer>
   );

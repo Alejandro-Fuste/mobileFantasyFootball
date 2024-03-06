@@ -32,7 +32,7 @@ const League = ({ id, leagueName }) => {
         <View style={styles(id).detailsContainer}>
           {leagueDetails.map((c, i) => {
             return (
-              <View style={styles(id).detailTextContainer}>
+              <View key={i} style={styles(id).detailTextContainer}>
                 <Text style={styles(id).detailText}>{c}</Text>
               </View>
             );
@@ -58,7 +58,7 @@ const styles = (id) =>
     button: {
       borderRadius: 10,
       marginTop: 10,
-      marginBottom: 10,
+      marginBottom: 20,
       padding: 10,
       elevation: 2,
       height: 130,
@@ -70,7 +70,7 @@ const styles = (id) =>
       justifyContent: "space-between",
     },
     leagueNameFont: {
-      fontFamily: "Roboto-Flex",
+      // fontFamily: "Roboto-Flex",
       fontSize: 14,
       fontWeight: "700",
       color: "#122d42",
