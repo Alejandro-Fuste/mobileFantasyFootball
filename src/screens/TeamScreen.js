@@ -16,7 +16,6 @@ const TeamScreen = ({ route }) => {
   const [team, setTeam] = useState(
     getTeam(leagueId, leagueName, teamId).payload
   );
-  console.log(team);
 
   const DATA = [
     {

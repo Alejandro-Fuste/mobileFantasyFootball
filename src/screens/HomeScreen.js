@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import League from "../components/League";
 import { getLeagues } from "../actions/getActions";
-import Logo from "../../assets/Logo.svg";
 import { useFonts } from "expo-font";
 
 const HomeScreen = () => {

@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flex: 0,
-    // padding: 5,
     marginRight: 5,
     marginLeft: 5,
     flexDirection: "row",
