@@ -105,17 +105,20 @@ function TabNavigator() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#122d42",
+        },
+        headerShadowVisible: false,
+        headerTintColor: "#30D5C8",
+      }}
+    >
       <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
           headerTitle: (props) => <LogoHeader {...props} />,
-          headerStyle: {
-            backgroundColor: "#122d42",
-            borderBottomColor: "#122d42",
-          },
-          headerShadowVisible: false,
         }}
       />
       <Stack.Screen
@@ -123,14 +126,15 @@ function StackNavigator() {
         component={LeagueScreen}
         options={{
           headerTitle: "",
-          headerStyle: {
-            backgroundColor: "#122d42",
-          },
-          headerShadowVisible: false,
-          headerTintColor: "#30D5C8",
         }}
       />
-      <Stack.Screen name="Team" component={TeamScreen} />
+      <Stack.Screen
+        name="Team"
+        component={TeamScreen}
+        options={{
+          headerTitle: "",
+        }}
+      />
     </Stack.Navigator>
   );
 }
