@@ -16,6 +16,7 @@ const TeamScreen = ({ route }) => {
   const [team, setTeam] = useState(
     getTeam(leagueId, leagueName, teamId).payload
   );
+  console.log(team);
 
   const DATA = [
     {
@@ -38,22 +39,97 @@ const TeamScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}>
+      <View style={[styles.headerContainer, styles.rowContainer]}>
         <View>
           <Image
             source={{
               uri: `https://sleepercdn.com/avatars/thumbs/${team.avatar}`,
             }}
             style={styles.avatar}
+            testID="ownerAvatar"
           />
         </View>
 
-        <Text>{teamName}</Text>
+        <View style={styles.columnContainer}>
+          <Text testID="teamName" style={[styles.headerColor, styles.teamName]}>
+            {teamName}
+          </Text>
+          <Text
+            testID="teamOwner"
+            style={[styles.headerColor, styles.teamOwner]}
+          >
+            {team.displayName}
+          </Text>
+        </View>
       </View>
 
-      <View style={styles.contentContainer}>
-        <Text>Stats content</Text>
+      <View style={styles.infoContainer}>
+        <View testID="statsContainer" style={styles.rowContainer}>
+          <View style={styles.columnContainer}>
+            <Text
+              testID="rankTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Rank
+            </Text>
+            <Text
+              testID="rankNumber"
+              style={[styles.statsColor, styles.statsColor]}
+            >
+              8th
+            </Text>
+          </View>
 
+          <View style={styles.columnContainer}>
+            <Text
+              testID="recordTile"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Record
+            </Text>
+            <Text
+              testID="recordNumbers"
+              style={[styles.statsColor, styles.statsColor]}
+            >
+              {team.wins}-{team.losses}-{team.ties}
+            </Text>
+          </View>
+
+          <View style={styles.columnContainer}>
+            <Text
+              testID="pointsForTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Points For
+            </Text>
+            <Text
+              testID="pointsForNumber"
+              style={[styles.statsColor, styles.statsColor]}
+            >
+              {team.pointsFor}
+            </Text>
+          </View>
+
+          <View style={styles.columnContainer}>
+            <Text
+              testID="pointsAgainstTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Points Against
+            </Text>
+            <Text
+              testID="pointsAgainstNumber"
+              style={[styles.statsColor, styles.statsColor]}
+            >
+              {team.pointsAgainst}
+            </Text>
+          </View>
+        </View>
+
+        <View testID="movesInfoContainer" style={styles.rowContainer}></View>
+      </View>
+
+      <View style={styles.rosterContainer}>
         <SafeAreaView>
           <SectionList
             sections={DATA}
@@ -79,17 +155,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  columnContainer: {
+    flex: 0,
+    flexDirection: "column",
+  },
+  rowContainer: {
+    flex: 0,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
   headerContainer: {
     flex: 1,
     padding: 10,
-    flexDirection: "row",
-    backgroundColor: "steelblue",
-    justifyContent: "space-evenly",
+    backgroundColor: "#122d42",
   },
-  contentContainer: {
+  rosterContainer: {
     flex: 10,
     padding: 10,
-    backgroundColor: "skyblue",
+    backgroundColor: "#f2f2f2",
     alignItems: "center",
   },
   item: {
@@ -105,9 +188,35 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     resizeMode: "cover",
+    borderRadius: 50,
   },
-  title: {
-    fontSize: 10,
+  teamName: {
+    fontSize: 18,
+    fontWeight: 700,
+  },
+  teamOwner: {
+    fontSize: 14,
+    fontWeight: 500,
+  },
+  headerColor: {
+    color: "white",
+  },
+  infoContainer: {
+    backgroundColor: "white",
+    borderRadius: 10,
+    margin: 10,
+    padding: 10,
+  },
+  statsTitleFont: {
+    fontSize: 16,
+    fontWeight: 700,
+  },
+  statsFont: {
+    fontSize: 14,
+    fontWeight: 400,
+  },
+  statsColor: {
+    color: "#424242",
   },
 });
 

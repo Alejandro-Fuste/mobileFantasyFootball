@@ -112,6 +112,7 @@ function StackNavigator() {
         },
         headerShadowVisible: false,
         headerTintColor: "#30D5C8",
+        headerBackTitleVisible: false,
       }}
     >
       <Stack.Screen
