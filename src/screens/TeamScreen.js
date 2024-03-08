@@ -79,7 +79,7 @@ const TeamScreen = ({ route }) => {
               testID="rankNumber"
               style={[styles.statsColor, styles.statsColor]}
             >
-              8th
+              {team.rank}
             </Text>
           </View>
 
@@ -145,6 +145,21 @@ const TeamScreen = ({ route }) => {
               style={[styles.statsColor, styles.statsColor]}
             >
               {team.waiversBudgetUsed}
+            </Text>
+          </View>
+
+          <View style={[styles.columnContainer, styles.marginLeft]}>
+            <Text
+              testID="draftPicksTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Draft Picks
+            </Text>
+            <Text
+              testID="draftPicksNumber"
+              style={[styles.statsColor, styles.statsColor]}
+            >
+              Picks go here
             </Text>
           </View>
         </View>
@@ -242,6 +257,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#f9c2ff",
     padding: 10,
     marginVertical: 8,
+  },
+  marginLeft: {
+    marginLeft: 10,
   },
 });
 
