@@ -38,6 +38,7 @@ const TeamScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
+      {/* Avatar, Team, Rank */}
       <View
         testID="nameAvatarContainer"
         style={[
@@ -68,7 +69,7 @@ const TeamScreen = ({ route }) => {
           </Text>
         </View>
 
-        <View testID="avatarView" style={styles.columnContainer}>
+        <View testID="rankView" style={styles.columnContainer}>
           <Text
             testID="rankTitle"
             style={[styles.headerColor, styles.teamName]}
@@ -84,102 +85,113 @@ const TeamScreen = ({ route }) => {
         </View>
       </View>
 
-      <View testID="statsMovesView" style={styles.infoContainer}>
-        <View
-          testID="statsContainer"
-          style={[styles.rowContainer, styles.movesContainer]}
-        >
-          <View testID="recordView" style={styles.columnContainer}>
-            <Text
-              testID="recordTile"
-              style={[styles.statsColor, styles.statsTitleFont]}
-            >
-              Record
-            </Text>
-            <Text
-              testID="recordNumbers"
-              style={[styles.statsColor, styles.statsColor]}
-            >
-              {team.wins}-{team.losses}-{team.ties}
-            </Text>
-          </View>
-
-          <View
-            testID="pointsForView"
-            style={[styles.columnContainer, styles.marginLeft]}
+      <View
+        testID="statsMovesView"
+        style={[styles.infoContainer, styles.columnContainer]}
+      >
+        <View testID="summaryRow" style={[styles.rowContainer]}>
+          <Text
+            testID="summaryTitle"
+            style={[
+              styles.summaryFont,
+              // styles.statsTitleFont,
+              styles.summaryLeftMargin,
+            ]}
           >
-            <Text
-              testID="pointsForTitle"
-              style={[styles.statsColor, styles.statsTitleFont]}
-            >
-              Points For
-            </Text>
-            <Text
-              testID="pointsForNumber"
-              style={[styles.statsColor, styles.statsColor]}
-            >
-              {team.pointsFor}
-            </Text>
-          </View>
-
-          <View
-            testID="pointsAgainstView"
-            style={[styles.columnContainer, styles.marginLeft]}
-          >
-            <Text
-              testID="pointsAgainstTitle"
-              style={[styles.statsColor, styles.statsTitleFont]}
-            >
-              Points Against
-            </Text>
-            <Text
-              testID="pointsAgainstNumber"
-              style={[styles.statsColor, styles.statsColor]}
-            >
-              {team.pointsAgainst}
-            </Text>
-          </View>
+            Summary
+          </Text>
         </View>
 
-        <View
-          testID="movesInfoContainer"
-          style={[styles.rowContainer, styles.movesContainer]}
-        >
-          <View testID="budgetUsedView" style={styles.columnContainer}>
-            <Text
-              testID="budgetTitle"
-              style={[styles.statsColor, styles.statsTitleFont]}
-            >
-              Budget Used
-            </Text>
-            <Text
-              testID="budgetUsedNumber"
-              style={[styles.statsColor, styles.statsColor]}
-            >
-              {team.waiversBudgetUsed}
-            </Text>
+        <View testID="statsRow" style={styles.rowContainer}>
+          {/* Left */}
+          <View
+            testID="leftContainer"
+            style={[styles.columnContainer, styles.movesContainer]}
+          >
+            <View testID="recordView" style={styles.columnContainer}>
+              <Text
+                testID="recordTile"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Record
+              </Text>
+              <Text testID="recordNumbers" style={styles.statsColor}>
+                {team.wins}-{team.losses}-{team.ties}
+              </Text>
+            </View>
+
+            <View testID="budgetUsedView" style={styles.columnContainer}>
+              <Text
+                testID="budgetTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Budget Used
+              </Text>
+              <Text testID="budgetUsedNumber" style={styles.statsColor}>
+                {team.waiversBudgetUsed}
+              </Text>
+            </View>
           </View>
 
+          {/* Middle */}
           <View
-            testID="draftPicksView"
-            style={[styles.columnContainer, styles.marginLeft]}
+            testID="middleContainer"
+            style={[styles.columnContainer, styles.movesContainer]}
           >
-            <Text
-              testID="draftPicksTitle"
-              style={[styles.statsColor, styles.statsTitleFont]}
+            <View
+              testID="pointsForView"
+              style={[styles.columnContainer, styles.marginLeft]}
             >
-              Draft Picks
-            </Text>
-            <Text
-              testID="draftPicksNumber"
-              style={[styles.statsColor, styles.statsColor]}
+              <Text
+                testID="pointsForTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Points For
+              </Text>
+              <Text testID="pointsForNumber" style={styles.statsColor}>
+                {team.pointsFor}
+              </Text>
+            </View>
+
+            <View
+              testID="draftPicksView"
+              style={[styles.columnContainer, styles.marginLeft]}
             >
-              Picks go here
-            </Text>
+              <Text
+                testID="draftPicksTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Draft Picks
+              </Text>
+              <Text testID="draftPicksNumber" style={styles.statsColor}>
+                Picks go here
+              </Text>
+            </View>
+          </View>
+
+          {/* Right */}
+          <View
+            testID="rightContainer"
+            style={[styles.columnContainer, styles.movesContainer]}
+          >
+            <View
+              testID="pointsAgainstView"
+              style={[styles.columnContainer, styles.marginLeft]}
+            >
+              <Text
+                testID="pointsAgainstTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Points Ag.
+              </Text>
+              <Text testID="pointsAgainstNumber" style={styles.statsColor}>
+                {team.pointsAgainst}
+              </Text>
+            </View>
           </View>
         </View>
       </View>
-
+      {/* roster */}
       <View style={styles.rosterContainer}>
         <SafeAreaView>
           <SectionList
@@ -223,7 +235,6 @@ const styles = StyleSheet.create({
   },
   positionHeader: {
     fontSize: 12,
-    // backgroundColor: "#fff",
   },
   avatar: {
     width: 50,
@@ -253,7 +264,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   statsTitleFont: {
-    fontSize: 16,
+    color: "#454545",
+    fontSize: 15,
     fontWeight: 700,
   },
   statsFont: {
@@ -261,7 +273,8 @@ const styles = StyleSheet.create({
     fontWeight: 400,
   },
   statsColor: {
-    color: "#454545",
+    color: "#5c5c5c",
+    marginBottom: 5,
   },
   rosterContainer: {
     flex: 10,
@@ -275,6 +288,14 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   marginLeft: {
+    marginLeft: 5,
+  },
+  summaryFont: {
+    color: "#454545",
+    fontSize: 17,
+    fontWeight: "bold",
+  },
+  summaryLeftMargin: {
     marginLeft: 10,
   },
   spaceEvenly: {

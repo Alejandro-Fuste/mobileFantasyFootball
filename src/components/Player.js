@@ -39,9 +39,11 @@ const Player = ({ playerName }) => {
       >
         <Image src={player.headShot} style={styles.headShot} />
         <Text style={styles.nameGradeText}>{playerName}</Text>
-        <Text style={styles.nameGradeText}>
-          {player.overallGrade.grade.letter}
-        </Text>
+        <View style={styles.gradeTextView}>
+          <Text style={[styles.nameGradeText, styles.textAlign]}>
+            {player.overallGrade.grade.letter}
+          </Text>
+        </View>
       </Pressable>
     </View>
   );
@@ -101,9 +103,16 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: "#30D5C8",
   },
+  gradeTextView: {
+    width: 20,
+  },
   nameGradeText: {
+    backgroundColor: "black",
     fontSize: 16,
     fontWeight: "bold",
     color: "#454545",
+  },
+  textAlign: {
+    textAlign: "left",
   },
 });
