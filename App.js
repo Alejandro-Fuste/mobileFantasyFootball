@@ -56,9 +56,10 @@ function TabNavigator() {
         component={PlayersScreen}
         options={{
           tabBarTestID: "Players",
-          headerStyle: {
-            backgroundColor: "#122d42",
-          },
+          // headerStyle: {
+          //   backgroundColor: "#122d42",
+          // },
+          // headerTintColor: "#30D5C8",
           tabBarStyle: { backgroundColor: "#122d42" },
           tabBarLabel: ({ focused }) => (
             <Text
