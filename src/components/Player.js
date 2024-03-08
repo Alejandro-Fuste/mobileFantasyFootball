@@ -38,8 +38,10 @@ const Player = ({ playerName }) => {
         onPress={() => setModalVisible(true)}
       >
         <Image src={player.headShot} style={styles.headShot} />
-        <Text>{playerName}</Text>
-        <Text>{player.overallGrade.grade.letter}</Text>
+        <Text style={styles.nameGradeText}>{playerName}</Text>
+        <Text style={styles.nameGradeText}>
+          {player.overallGrade.grade.letter}
+        </Text>
       </Pressable>
     </View>
   );
@@ -95,5 +97,13 @@ const styles = StyleSheet.create({
   headShot: {
     width: 66,
     height: 66,
+    resizeMode: "cover",
+    borderRadius: 50,
+    backgroundColor: "#30D5C8",
+  },
+  nameGradeText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#454545",
   },
 });

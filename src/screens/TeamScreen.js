@@ -16,7 +16,6 @@ const TeamScreen = ({ route }) => {
   const [team, setTeam] = useState(
     getTeam(leagueId, leagueName, teamId).payload
   );
-  console.log(team);
 
   const DATA = [
     {
@@ -41,9 +40,13 @@ const TeamScreen = ({ route }) => {
     <View style={styles.container}>
       <View
         testID="nameAvatarContainer"
-        style={[styles.headerContainer, styles.rowContainer]}
+        style={[
+          styles.headerContainer,
+          styles.rowContainer,
+          styles.spaceEvenly,
+        ]}
       >
-        <View>
+        <View testID="avatarView">
           <Image
             source={{
               uri: `https://sleepercdn.com/avatars/thumbs/${team.avatar}`,
@@ -53,7 +56,7 @@ const TeamScreen = ({ route }) => {
           />
         </View>
 
-        <View style={styles.columnContainer}>
+        <View testID="teamNameView" style={styles.columnContainer}>
           <Text testID="teamName" style={[styles.headerColor, styles.teamName]}>
             {teamName}
           </Text>
@@ -64,26 +67,29 @@ const TeamScreen = ({ route }) => {
             {team.displayName}
           </Text>
         </View>
+
+        <View testID="avatarView" style={styles.columnContainer}>
+          <Text
+            testID="rankTitle"
+            style={[styles.headerColor, styles.teamName]}
+          >
+            Rank
+          </Text>
+          <Text
+            testID="rankNumber"
+            style={[styles.headerColor, styles.teamOwner]}
+          >
+            {team.rank}
+          </Text>
+        </View>
       </View>
 
-      <View style={styles.infoContainer}>
-        <View testID="statsContainer" style={styles.rowContainer}>
-          <View style={styles.columnContainer}>
-            <Text
-              testID="rankTitle"
-              style={[styles.statsColor, styles.statsTitleFont]}
-            >
-              Rank
-            </Text>
-            <Text
-              testID="rankNumber"
-              style={[styles.statsColor, styles.statsColor]}
-            >
-              {team.rank}
-            </Text>
-          </View>
-
-          <View style={styles.columnContainer}>
+      <View testID="statsMovesView" style={styles.infoContainer}>
+        <View
+          testID="statsContainer"
+          style={[styles.rowContainer, styles.movesContainer]}
+        >
+          <View testID="recordView" style={styles.columnContainer}>
             <Text
               testID="recordTile"
               style={[styles.statsColor, styles.statsTitleFont]}
@@ -98,7 +104,10 @@ const TeamScreen = ({ route }) => {
             </Text>
           </View>
 
-          <View style={styles.columnContainer}>
+          <View
+            testID="pointsForView"
+            style={[styles.columnContainer, styles.marginLeft]}
+          >
             <Text
               testID="pointsForTitle"
               style={[styles.statsColor, styles.statsTitleFont]}
@@ -113,7 +122,10 @@ const TeamScreen = ({ route }) => {
             </Text>
           </View>
 
-          <View style={styles.columnContainer}>
+          <View
+            testID="pointsAgainstView"
+            style={[styles.columnContainer, styles.marginLeft]}
+          >
             <Text
               testID="pointsAgainstTitle"
               style={[styles.statsColor, styles.statsTitleFont]}
@@ -133,7 +145,7 @@ const TeamScreen = ({ route }) => {
           testID="movesInfoContainer"
           style={[styles.rowContainer, styles.movesContainer]}
         >
-          <View style={styles.columnContainer}>
+          <View testID="budgetUsedView" style={styles.columnContainer}>
             <Text
               testID="budgetTitle"
               style={[styles.statsColor, styles.statsTitleFont]}
@@ -148,7 +160,10 @@ const TeamScreen = ({ route }) => {
             </Text>
           </View>
 
-          <View style={[styles.columnContainer, styles.marginLeft]}>
+          <View
+            testID="draftPicksView"
+            style={[styles.columnContainer, styles.marginLeft]}
+          >
             <Text
               testID="draftPicksTitle"
               style={[styles.statsColor, styles.statsTitleFont]}
@@ -178,7 +193,9 @@ const TeamScreen = ({ route }) => {
               />
             )}
             renderSectionHeader={({ section: { title } }) => (
-              <Text style={styles.header}>{title}</Text>
+              <Text style={[styles.positionHeader, styles.statsTitleFont]}>
+                {title}
+              </Text>
             )}
           ></SectionList>
         </SafeAreaView>
@@ -198,16 +215,15 @@ const styles = StyleSheet.create({
   rowContainer: {
     flex: 0,
     flexDirection: "row",
-    justifyContent: "space-evenly",
   },
   headerContainer: {
     flex: 1,
-    padding: 10,
+    padding: 15,
     backgroundColor: "#122d42",
   },
-  header: {
+  positionHeader: {
     fontSize: 12,
-    backgroundColor: "#fff",
+    // backgroundColor: "#fff",
   },
   avatar: {
     width: 50,
@@ -245,7 +261,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
   },
   statsColor: {
-    color: "#424242",
+    color: "#454545",
   },
   rosterContainer: {
     flex: 10,
@@ -260,6 +276,10 @@ const styles = StyleSheet.create({
   },
   marginLeft: {
     marginLeft: 10,
+  },
+  spaceEvenly: {
+    flex: 0,
+    justifyContent: "space-evenly",
   },
 });
 

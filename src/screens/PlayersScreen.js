@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-end",
+    backgroundColor: "#122d42",
   },
   subHeaderContainer: {
     flex: 0,
@@ -148,5 +149,6 @@ const styles = StyleSheet.create({
   headerText: {
     fontWeight: "600",
     fontSize: 16,
+    color: "#30D5C8",
   },
 });
