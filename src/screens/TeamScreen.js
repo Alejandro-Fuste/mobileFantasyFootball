@@ -39,7 +39,10 @@ const TeamScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <View style={[styles.headerContainer, styles.rowContainer]}>
+      <View
+        testID="nameAvatarContainer"
+        style={[styles.headerContainer, styles.rowContainer]}
+      >
         <View>
           <Image
             source={{
@@ -126,7 +129,25 @@ const TeamScreen = ({ route }) => {
           </View>
         </View>
 
-        <View testID="movesInfoContainer" style={styles.rowContainer}></View>
+        <View
+          testID="movesInfoContainer"
+          style={[styles.rowContainer, styles.movesContainer]}
+        >
+          <View style={styles.columnContainer}>
+            <Text
+              testID="budgetTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Budget Used
+            </Text>
+            <Text
+              testID="budgetUsedNumber"
+              style={[styles.statsColor, styles.statsColor]}
+            >
+              {team.waiversBudgetUsed}
+            </Text>
+          </View>
+        </View>
       </View>
 
       <View style={styles.rosterContainer}>
@@ -169,17 +190,6 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#122d42",
   },
-  rosterContainer: {
-    flex: 10,
-    padding: 10,
-    backgroundColor: "#f2f2f2",
-    alignItems: "center",
-  },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 10,
-    marginVertical: 8,
-  },
   header: {
     fontSize: 12,
     backgroundColor: "#fff",
@@ -207,6 +217,10 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 10,
   },
+  movesContainer: {
+    padding: 10,
+    justifyContent: "flex-start",
+  },
   statsTitleFont: {
     fontSize: 16,
     fontWeight: 700,
@@ -217,6 +231,17 @@ const styles = StyleSheet.create({
   },
   statsColor: {
     color: "#424242",
+  },
+  rosterContainer: {
+    flex: 10,
+    padding: 10,
+    backgroundColor: "#f2f2f2",
+    alignItems: "center",
+  },
+  item: {
+    backgroundColor: "#f9c2ff",
+    padding: 10,
+    marginVertical: 8,
   },
 });
 
