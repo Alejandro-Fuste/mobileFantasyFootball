@@ -92,11 +92,7 @@ const TeamScreen = ({ route }) => {
         <View testID="summaryRow" style={[styles.rowContainer]}>
           <Text
             testID="summaryTitle"
-            style={[
-              styles.summaryFont,
-              // styles.statsTitleFont,
-              styles.summaryLeftMargin,
-            ]}
+            style={[styles.summaryFont, styles.summaryLeftMargin]}
           >
             Summary
           </Text>
@@ -128,7 +124,7 @@ const TeamScreen = ({ route }) => {
                 Budget Used
               </Text>
               <Text testID="budgetUsedNumber" style={styles.statsColor}>
-                {team.waiversBudgetUsed}
+                ${team.waiversBudgetUsed}
               </Text>
             </View>
           </View>
