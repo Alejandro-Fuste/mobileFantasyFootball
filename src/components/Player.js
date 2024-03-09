@@ -20,11 +20,8 @@ const Player = ({ playerName }) => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalHeaderView}>
-            <Pressable
-              style={styles.buttonClose}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text>
+            <Pressable onPress={() => setModalVisible(!modalVisible)}>
+              <Text style={styles.buttonClose}>
                 <Ionicons name="close-outline" size={24} />
               </Text>
             </Pressable>
@@ -61,13 +58,12 @@ const styles = StyleSheet.create({
   modalHeaderView: {
     flex: 0,
     flexDirection: "row",
-    backgroundColor: "steelblue",
+    backgroundColor: "#122d42",
     justifyContent: "flex-end",
     padding: 10,
   },
   contentContainer: {
     height: "100%",
-    backgroundColor: "skyblue",
   },
   button: {
     borderRadius: 10,
@@ -81,14 +77,16 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   buttonOpen: {
-    backgroundColor: "white",
     flex: 0,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: "white",
   },
   buttonClose: {
     padding: 5,
+    color: "#30D5C8",
+    fontWeight: "bold",
   },
   textStyle: {
     color: "white",

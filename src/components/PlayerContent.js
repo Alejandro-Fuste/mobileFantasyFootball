@@ -15,14 +15,21 @@ const PlayerContent = ({ data }) => {
   } = data;
   return (
     <View style={styles.container}>
+      {/* Header */}
       <View style={styles.headerContainer}>
         <View style={styles.subHeader1Container}>
           <Image src={headShot} style={styles.headShot} />
 
           <View style={styles.subHeader2Container}>
-            <Text>{name}</Text>
-            <Text>{position}</Text>
-            <Text>{team}</Text>
+            <Text style={styles.playerInfo}>{name}</Text>
+            <Text style={styles.playerInfo}>{team}</Text>
+            <Text style={styles.playerInfo}>{position}</Text>
+          </View>
+
+          <View testID="overGradeView">
+            <Text style={styles.playerInfo}>Grade</Text>
+            <Text style={styles.playerInfo}>{overallGrade.value}</Text>
+            <Text style={styles.playerInfo}>{overallGrade.grade.letter}</Text>
           </View>
         </View>
 
@@ -86,23 +93,26 @@ const styles = StyleSheet.create({
   headerContainer: {
     flex: 1,
     padding: 0,
-    backgroundColor: "steelblue",
-    justifyContent: "center",
+    backgroundColor: "#122d42",
   },
   subHeader1Container: {
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-end",
+    justifyContent: "space-evenly",
     marginTop: 5,
-    marginRight: 10,
+    marginRight: 20,
     marginBottom: 50,
-    marginLeft: 30,
+    marginLeft: 0,
   },
   subHeader2Container: {
-    flex: 1,
+    flex: 0,
     padding: 10,
-    justifyContent: "space-between",
+  },
+  playerInfo: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
   },
   contentContainer: {
     flex: 10,
@@ -114,5 +124,7 @@ const styles = StyleSheet.create({
   headShot: {
     width: 100,
     height: 100,
+    resizeMode: "cover",
+    borderRadius: 50,
   },
 });
