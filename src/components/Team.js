@@ -11,7 +11,7 @@ const Team = ({ teamName, teamId, leagueId, leagueName, avatar }) => {
       <Pressable
         style={({ pressed }) => [
           {
-            backgroundColor: pressed ? "rgb(210, 230, 255)" : "#122d42",
+            backgroundColor: pressed ? "rgb(210, 230, 255)" : "#264863",
           },
           ,
           styles.button,
@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
     height: 50,
     resizeMode: "cover",
     borderRadius: 40,
-    marginBottom: 10,
+    margin: 5,
+    marginLeft: 10,
   },
   team: {
     flex: 1,
@@ -58,15 +59,15 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "500",
     color: "white",
-    marginBottom: 10,
   },
   RightArrow: {
-    marginBottom: 10,
+    marginRight: 5,
   },
   button: {
     marginBottom: 10,
     elevation: 2,
     width: "100%",
+    borderRadius: 10,
   },
   buttonOpen: {
     flex: 0,
