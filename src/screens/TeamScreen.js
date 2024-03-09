@@ -191,6 +191,7 @@ const TeamScreen = ({ route }) => {
           </View>
         </View>
       </View>
+
       {/* roster */}
       <View style={styles.rosterContainer}>
         <SafeAreaView>
@@ -232,6 +233,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
     backgroundColor: "#122d42",
+    paddingRight: 25,
   },
   positionHeader: {
     fontSize: 12,

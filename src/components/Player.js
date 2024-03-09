@@ -34,11 +34,14 @@ const Player = ({ playerName }) => {
       </Modal>
 
       <Pressable
+        testID="playerButton"
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
         <Image src={player.headShot} style={styles.headShot} />
+
         <Text style={styles.nameGradeText}>{playerName}</Text>
+
         <View style={styles.gradeTextView}>
           <Text style={[styles.nameGradeText, styles.textAlign]}>
             {player.overallGrade.grade.letter}
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     paddingTop: 10,
-    paddingRight: 30,
+    paddingRight: 10,
     paddingBottom: 10,
     paddingLeft: 10,
     elevation: 2,
@@ -104,15 +107,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#30D5C8",
   },
   gradeTextView: {
-    width: 20,
+    flex: 0,
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   nameGradeText: {
-    backgroundColor: "black",
     fontSize: 16,
     fontWeight: "bold",
     color: "#454545",
   },
   textAlign: {
     textAlign: "left",
+    width: 25,
   },
 });
