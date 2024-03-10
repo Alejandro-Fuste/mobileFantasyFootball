@@ -81,26 +81,6 @@ const PlayerContent = ({ data }) => {
             </View>
           </View>
 
-          {/* Offense Info */}
-
-          <View
-            testID="offenseInfoView"
-            style={[styles.infoContainer, styles.columnContainer]}
-          >
-            <Text style={[styles.titleFont, styles.statsColor]}>
-              Offense Info
-            </Text>
-            <Text>Points Per Game: {offense.pointsPerGame}</Text>
-            <Text>Rank: {offense.rank}</Text>
-            <Text>Percentile: {offense.percentile}%</Text>
-            <Text>Grade: {offense.grade.letter}</Text>
-            <Text>Description: {offense.grade.description}</Text>
-            <Text>QBR: {offense.QBR}</Text>
-            <Text>Passing Yards Per Game: {offense.passPerGame}</Text>
-            <Text>Rushing Yards Per Game: {offense.rushPerGame}</Text>
-            <Text>Total Yards Per Game: {offense.yardsPerGame}</Text>
-          </View>
-
           {/* Production Info */}
 
           <View
@@ -110,14 +90,197 @@ const PlayerContent = ({ data }) => {
             <Text style={[styles.titleFont, styles.statsColor]}>
               Production Info
             </Text>
-            <Text>Total Points: {production.totalPoints}</Text>
-            <Text>Points Per Game: {production.pointsPerGame}</Text>
-            <Text>Position Rank: {production.positionRank}</Text>
-            <Text>Position Percentile: {production.positionPercentile}%</Text>
-            <Text>Position Grade: {production.positionGrade.letter}</Text>
-            <Text>
-              Position Descripton: {production.positionGrade.description}
+
+            <View testID="positionDescriptionView" style={styles.rowContainer}>
+              <Text
+                testID="positionDescriptionTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Position Descripton:
+              </Text>
+              <Text testID="positionDescriptionValue" style={styles.valueColor}>
+                {production.positionGrade.description} Production
+              </Text>
+            </View>
+
+            <View testID="totalPointsView" style={styles.rowContainer}>
+              <Text
+                testID="totalPointsTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Total Points:
+              </Text>
+              <Text testID="totalPointsValue" style={styles.valueColor}>
+                {production.totalPoints}
+              </Text>
+            </View>
+
+            <View testID="productionPPGView" style={styles.rowContainer}>
+              <Text
+                testID="productionPPGTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Points Per Game:
+              </Text>
+              <Text testID="productionPPGValue" style={styles.valueColor}>
+                {production.pointsPerGame}
+              </Text>
+            </View>
+
+            <View testID="positionRankView" style={styles.rowContainer}>
+              <Text
+                testID="positionRankTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Position Rank:
+              </Text>
+              <Text testID="positionRankValue" style={styles.valueColor}>
+                {production.positionRank}
+              </Text>
+            </View>
+
+            <View testID="positionPercentileView" style={styles.rowContainer}>
+              <Text
+                testID="positionPercentileTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Position Percentile:
+              </Text>
+              <Text testID="positionPercentileValue" style={styles.valueColor}>
+                {production.positionPercentile}%
+              </Text>
+            </View>
+
+            <View testID="positionGradeView" style={styles.rowContainer}>
+              <Text
+                testID="positionGradeTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Position Grade:
+              </Text>
+              <Text testID="positionGradeValue" style={styles.valueColor}>
+                {production.positionGrade.letter}
+              </Text>
+            </View>
+          </View>
+
+          {/* Offense Info */}
+
+          <View
+            testID="offenseInfoView"
+            style={[styles.infoContainer, styles.columnContainer]}
+          >
+            <Text style={[styles.titleFont, styles.statsColor]}>
+              Offense Info
             </Text>
+
+            <View testID="offenseDescriptionView" style={styles.rowContainer}>
+              <Text
+                testID="offenseDescriptionTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Description:
+              </Text>
+              <Text testID="offenseDescriptionValue" style={styles.valueColor}>
+                {offense.grade.description} Offense
+              </Text>
+            </View>
+
+            <View testID="ppgView" style={styles.rowContainer}>
+              <Text
+                testID="ppgTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Points Per Game:
+              </Text>
+              <Text testID="ppgValue" style={styles.valueColor}>
+                {offense.pointsPerGame}
+              </Text>
+            </View>
+
+            <View testID="ppgRankView" style={styles.rowContainer}>
+              <Text
+                testID="ppgRankTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Rank:
+              </Text>
+              <Text testID="ppgRankValue" style={styles.valueColor}>
+                {offense.rank}
+              </Text>
+            </View>
+
+            <View testID="offensePercentileView" style={styles.rowContainer}>
+              <Text
+                testID="offensePercentileTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Percentile:
+              </Text>
+              <Text testID="offensePercentileValue" style={styles.valueColor}>
+                {offense.percentile}%
+              </Text>
+            </View>
+
+            <View testID="offenseGradeView" style={styles.rowContainer}>
+              <Text
+                testID="offenseGradeTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Grade:
+              </Text>
+              <Text testID="offenseGradeValue" style={styles.valueColor}>
+                {offense.grade.letter}
+              </Text>
+            </View>
+
+            <View testID="qbrView" style={styles.rowContainer}>
+              <Text
+                testID="qbrTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                QBR:
+              </Text>
+              <Text testID="offenseGradeValue" style={styles.valueColor}>
+                {offense.QBR}
+              </Text>
+            </View>
+
+            <View testID="passingYardsView" style={styles.rowContainer}>
+              <Text
+                testID="passingYardsTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Passing Yards Per Game:
+              </Text>
+              <Text testID="passingYardsValue" style={styles.valueColor}>
+                {offense.passPerGame}
+              </Text>
+            </View>
+
+            <View testID="rushingYardsView" style={styles.rowContainer}>
+              <Text
+                testID="rushingYardsTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Rushing Yards Per Game:
+              </Text>
+              <Text testID="rushingYardsValue" style={styles.valueColor}>
+                {offense.rushPerGame}
+              </Text>
+            </View>
+
+            <View testID="totalYardsView" style={styles.rowContainer}>
+              <Text
+                testID="totalYardsTitle"
+                style={[styles.statsColor, styles.statsTitleFont]}
+              >
+                Total Yards Per Game:
+              </Text>
+              <Text testID="totalYardsValue" style={styles.valueColor}>
+                {offense.yardsPerGame}
+              </Text>
+            </View>
           </View>
 
           {/* Opportunity Info */}
