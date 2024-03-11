@@ -1,4 +1,12 @@
-import { StyleSheet, Text, View, Modal, Pressable, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Modal,
+  Pressable,
+  Image,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import PlayerContent from "./PlayerContent";
@@ -26,7 +34,9 @@ const Player = ({ playerName }) => {
               </Text>
             </Pressable>
           </View>
-          <PlayerContent style={styles.contentContainer} data={player} />
+          <ScrollView>
+            <PlayerContent style={styles.contentContainer} data={player} />
+          </ScrollView>
         </View>
       </Modal>
 
