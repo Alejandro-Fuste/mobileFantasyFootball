@@ -106,42 +106,325 @@ function determinePositionOpportunity(position, data) {
     case "RB":
       return (
         <View>
-          <Text>Snap Percentage: {data.snapPercentage}%</Text>
-          <Text>Attempts: {data.attempts}</Text>
-          <Text>Attempts Rank: {data.attemptsRank}</Text>
-          <Text>Attempts Percentile: {data.attemptsPercentile}%</Text>
-          <Text>Attempts Grade: {data.attemptsGrade.letter}</Text>
-          <Text>Attempts Description: {data.attemptsGrade.description}</Text>
-          <Text>Receptions: {data.receptions}</Text>
-          <Text>Targets: {data.targets}</Text>
-          <Text>Targets Rank: {data.targetsRank}</Text>
-          <Text>Targets Percentile: {data.targetsPercentile}%</Text>
-          <Text>Targets Grade: {data.targetsGrade.letter}</Text>
-          <Text>Targets Description: {data.targetsGrade.description}</Text>
+          <View testID="snapPercentageView" style={styles.rowContainer}>
+            <Text
+              testID="snapPercentageTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Snap Percentage:
+            </Text>
+            <Text testID="snapPercentagesValue" style={styles.valueColor}>
+              {data.snapPercentage}%
+            </Text>
+          </View>
+
+          <View testID="attemptsDescriptionView" style={styles.rowContainer}>
+            <Text
+              testID="attemptsDescriptionTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Attempts Description:
+            </Text>
+            <Text testID="attemptsDescriptionsValue" style={styles.valueColor}>
+              {data.attemptsGrade.description} Attempts
+            </Text>
+          </View>
+
+          <View testID="attemptsView" style={styles.rowContainer}>
+            <Text
+              testID="attemptsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Attempts:
+            </Text>
+            <Text testID="attemptsValue" style={styles.valueColor}>
+              {data.attempts}
+            </Text>
+          </View>
+
+          <View testID="attemptsView" style={styles.rowContainer}>
+            <Text
+              testID="attemptsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Attempts Rank:
+            </Text>
+            <Text testID="attemptsValue" style={styles.valueColor}>
+              {data.attemptsRank}
+            </Text>
+          </View>
+
+          <View testID="attemptsPercentileView" style={styles.rowContainer}>
+            <Text
+              testID="attemptsPercentileTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Attempts Percentile:
+            </Text>
+            <Text testID="attemptsPercentileValue" style={styles.valueColor}>
+              {data.attemptsPercentile}%
+            </Text>
+          </View>
+
+          <View testID="attemptsGradeView" style={styles.rowContainer}>
+            <Text
+              testID="attemptsGradeTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Attempts Grade:
+            </Text>
+            <Text testID="attemptsGradeValue" style={styles.valueColor}>
+              {data.attemptsGrade.letter}
+            </Text>
+          </View>
+
+          <View testID="targetsDescriptionView" style={styles.rowContainer}>
+            <Text
+              testID="targetsDescriptionTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Description:
+            </Text>
+            <Text testID="targetsDescriptionValue" style={styles.valueColor}>
+              {data.targetsGrade.description} Targets
+            </Text>
+          </View>
+
+          <View testID="receptionsView" style={styles.rowContainer}>
+            <Text
+              testID="receptionsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Receptions:
+            </Text>
+            <Text testID="receptionsValue" style={styles.valueColor}>
+              {data.receptions}
+            </Text>
+          </View>
+
+          <View testID="targetsView" style={styles.rowContainer}>
+            <Text
+              testID="targetsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets:
+            </Text>
+            <Text testID="targetsValue" style={styles.valueColor}>
+              {data.targets}
+            </Text>
+          </View>
+
+          <View testID="targetsRankView" style={styles.rowContainer}>
+            <Text
+              testID="targetsRankTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Rank:
+            </Text>
+            <Text testID="targetsRankValue" style={styles.valueColor}>
+              {data.targetsRank}
+            </Text>
+          </View>
+
+          <View testID="targetsPercentileView" style={styles.rowContainer}>
+            <Text
+              testID="targetsPercentileTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Percentile:
+            </Text>
+            <Text testID="targetsPercentileValue" style={styles.valueColor}>
+              {data.targetsPercentile}%
+            </Text>
+          </View>
+
+          <View testID="targetsGradeView" style={styles.rowContainer}>
+            <Text
+              testID="targetsGradeTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Grade:
+            </Text>
+            <Text testID="targetsGradeValue" style={styles.valueColor}>
+              {data.targetsGrade.letter}
+            </Text>
+          </View>
         </View>
       );
     case "WR":
       return (
         <View>
-          <Text>Snap Percentage: {data.snapPercentage}%</Text>
-          <Text>Receptions: {data.receptions}</Text>
-          <Text>Targets: {data.targets}</Text>
-          <Text>Targets Rank: {data.targetsRank}</Text>
-          <Text>Targets Percentile: {data.targetsPercentile}%</Text>
-          <Text>Targets Grade: {data.targetsGrade.letter}</Text>
-          <Text>Targets Description: {data.targetsGrade.description}</Text>
+          <View testID="targetsDescriptionView" style={styles.rowContainer}>
+            <Text
+              testID="targetsDescriptionTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Description:
+            </Text>
+            <Text testID="targetsDescriptionValue" style={styles.valueColor}>
+              {data.targetsGrade.description} Targets
+            </Text>
+          </View>
+
+          <View testID="snapPercentageView" style={styles.rowContainer}>
+            <Text
+              testID="snapPercentageTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Snap Percentage:
+            </Text>
+            <Text testID="snapPercentagesValue" style={styles.valueColor}>
+              {data.snapPercentage}%
+            </Text>
+          </View>
+
+          <View testID="receptionsView" style={styles.rowContainer}>
+            <Text
+              testID="receptionsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Receptions:
+            </Text>
+            <Text testID="receptionsValue" style={styles.valueColor}>
+              {data.receptions}
+            </Text>
+          </View>
+
+          <View testID="targetsView" style={styles.rowContainer}>
+            <Text
+              testID="targetsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets:
+            </Text>
+            <Text testID="targetsValue" style={styles.valueColor}>
+              {data.targets}
+            </Text>
+          </View>
+
+          <View testID="targetsRankView" style={styles.rowContainer}>
+            <Text
+              testID="targetsRankTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Rank:
+            </Text>
+            <Text testID="targetsRankValue" style={styles.valueColor}>
+              {data.targetsRank}
+            </Text>
+          </View>
+
+          <View testID="targetsPercentileView" style={styles.rowContainer}>
+            <Text
+              testID="targetsPercentileTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Percentile:
+            </Text>
+            <Text testID="targetsPercentileValue" style={styles.valueColor}>
+              {data.targetsPercentile}%
+            </Text>
+          </View>
+
+          <View testID="targetsGradeView" style={styles.rowContainer}>
+            <Text
+              testID="targetsGradeTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Grade:
+            </Text>
+            <Text testID="targetsGradeValue" style={styles.valueColor}>
+              {data.targetsGrade.letter}
+            </Text>
+          </View>
         </View>
       );
     case "TE":
       return (
         <View>
-          <Text>Snap Percentage: {data.snapPercentage}%</Text>
-          <Text>Receptions: {data.receptions}</Text>
-          <Text>Targets: {data.targets}</Text>
-          <Text>Targets Rank: {data.targetsRank}</Text>
-          <Text>Targets Percentile: {data.targetsPercentile}%</Text>
-          <Text>Targets Grade: {data.targetsGrade.letter}</Text>
-          <Text>Targets Description: {data.targetsGrade.description}</Text>
+          <View testID="targetsDescriptionView" style={styles.rowContainer}>
+            <Text
+              testID="targetsDescriptionTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Description:
+            </Text>
+            <Text testID="targetsDescriptionValue" style={styles.valueColor}>
+              {data.targetsGrade.description} Targets
+            </Text>
+          </View>
+
+          <View testID="snapPercentageView" style={styles.rowContainer}>
+            <Text
+              testID="snapPercentageTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Snap Percentage:
+            </Text>
+            <Text testID="snapPercentagesValue" style={styles.valueColor}>
+              {data.snapPercentage}%
+            </Text>
+          </View>
+
+          <View testID="receptionsView" style={styles.rowContainer}>
+            <Text
+              testID="receptionsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Receptions:
+            </Text>
+            <Text testID="receptionsValue" style={styles.valueColor}>
+              {data.receptions}
+            </Text>
+          </View>
+
+          <View testID="targetsView" style={styles.rowContainer}>
+            <Text
+              testID="targetsTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets:
+            </Text>
+            <Text testID="targetsValue" style={styles.valueColor}>
+              {data.targets}
+            </Text>
+          </View>
+
+          <View testID="targetsRankView" style={styles.rowContainer}>
+            <Text
+              testID="targetsRankTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Rank:
+            </Text>
+            <Text testID="targetsRankValue" style={styles.valueColor}>
+              {data.targetsRank}
+            </Text>
+          </View>
+
+          <View testID="targetsPercentileView" style={styles.rowContainer}>
+            <Text
+              testID="targetsPercentileTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Percentile:
+            </Text>
+            <Text testID="targetsPercentileValue" style={styles.valueColor}>
+              {data.targetsPercentile}%
+            </Text>
+          </View>
+
+          <View testID="targetsGradeView" style={styles.rowContainer}>
+            <Text
+              testID="targetsGradeTitle"
+              style={[styles.statsColor, styles.statsTitleFont]}
+            >
+              Targets Grade:
+            </Text>
+            <Text testID="targetsGradeValue" style={styles.valueColor}>
+              {data.targetsGrade.letter}
+            </Text>
+          </View>
         </View>
       );
     default:
