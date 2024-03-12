@@ -12,7 +12,6 @@ import TeamScreen from "./src/screens/TeamScreen";
 import LogoHeader from "./src/components/LogoHeader";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { StatusBar } from "expo-status-bar";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -147,7 +146,6 @@ function StackNavigator() {
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style={"auto"}></StatusBar>
       <TabNavigator />
     </NavigationContainer>
   );
