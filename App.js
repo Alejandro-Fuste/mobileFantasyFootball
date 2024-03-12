@@ -10,6 +10,9 @@ import DraftScreen from "./src/screens/DraftScreen";
 import LeagueScreen from "./src/screens/LeagueScreen";
 import TeamScreen from "./src/screens/TeamScreen";
 import LogoHeader from "./src/components/LogoHeader";
+import HeaderTitle from "./src/components/HeaderTitle";
+
+import { Provider } from "./src/context/LeagueContext";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
 
@@ -129,7 +132,7 @@ function StackNavigator() {
         name="League"
         component={LeagueScreen}
         options={{
-          headerTitle: "",
+          headerTitle: (props) => <HeaderTitle {...props} />,
         }}
       />
       <Stack.Screen
@@ -145,8 +148,10 @@ function StackNavigator() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <TabNavigator />
-    </NavigationContainer>
+    <Provider>
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </Provider>
   );
 }

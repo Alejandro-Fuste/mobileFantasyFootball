@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View, SafeAreaView, FlatList } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Team from "../components/Team";
 import { getLeague } from "../actions/getActions";
+import { Context } from "../context/LeagueContext";
 
 const LeagueScreen = ({ route }) => {
+  const { state } = useContext(Context);
   const { id, leagueName } = route.params;
   const [teams, setTeams] = useState(getLeague(id).payload);
+  console.log("from league screen", state);
 
   return (
     <View style={styles.container}>

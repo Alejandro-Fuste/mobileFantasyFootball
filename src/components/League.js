@@ -1,15 +1,18 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import determineLeagueColor from "../utils/determineLeagueColor";
 import { useFonts } from "expo-font";
 import FootballSVG from "../../assets/american-football.svg";
 import { getLeagueDetails } from "../actions/getActions";
+import { Context } from "../context/LeagueContext";
 
 const League = ({ id, leagueName }) => {
   const [leagueDetails, setLeagueDetails] = useState(
     getLeagueDetails(id).payload
   );
+  const { state, setLeagueName } = useContext(Context);
+
   const navigation = useNavigation();
   const [fontsLoaded] = useFonts({
     "Roboto-Flex": require("../../assets/fonts/RobotoFlex-Regular.ttf"),
@@ -19,7 +22,11 @@ const League = ({ id, leagueName }) => {
     <View style={styles(id).container}>
       <Pressable
         style={[styles(id).button, styles(id).buttonOpen]}
-        onPress={() => navigation.navigate("League", { id, leagueName })}
+        onPress={() => {
+          console.log("from league press", leagueName);
+          setLeagueName(leagueName);
+          return navigation.navigate("League", { id, leagueName });
+        }}
       >
         <View style={styles(id).detailsContainer}>
           <Text style={[styles(id).league, styles(id).leagueNameFont]}>

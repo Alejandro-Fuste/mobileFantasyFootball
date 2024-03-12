@@ -1,18 +1,18 @@
 import { SET_LEAGUE_NAME } from "../actions/types";
 
 const initialState = {
-  league_name: "",
+  leagues: [],
+  leagueName: "",
 };
 
-export default function (state = initialState, action) {
+export const leagueReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_LEAGUE_NAME:
       return {
         ...state,
-        league_name: action.payload,
-        user: action.payload,
+        leagueName: action.payload,
       };
     default:
       return state;
   }
-}
+};

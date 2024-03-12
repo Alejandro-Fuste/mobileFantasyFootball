@@ -1,3 +1,5 @@
-export default reducers({
-  leagueName: "",
-});
+import { leagueReducer } from "./leagueReducer";
+
+export const reducers = {
+  leagueReducer,
+};
