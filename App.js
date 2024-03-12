@@ -139,7 +139,7 @@ function StackNavigator() {
         name="Team"
         component={TeamScreen}
         options={{
-          headerTitle: "",
+          headerTitle: "Team",
         }}
       />
     </Stack.Navigator>
