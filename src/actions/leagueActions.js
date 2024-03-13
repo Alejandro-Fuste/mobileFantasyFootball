@@ -5,3 +5,9 @@ export const setLeagueName = (dispatch) => {
     dispatch({ type: SET_LEAGUE_NAME, payload: name });
   };
 };
+
+export const getLeagueDetails = (dispatch) => {
+  return (id) => {
+    dispatch({ type: GET_LEAGUE_DETAILS, payload: id });
+  };
+};
