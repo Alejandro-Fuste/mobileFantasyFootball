@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import League from "../components/League";
-import { getLeagues } from "../actions/getActions";
+import { Context } from "../context/LeagueContext";
 import { useFonts } from "expo-font";
 
 const HomeScreen = () => {
-  const [leagues, setLeagues] = useState(getLeagues().payload);
+  const { state } = useContext(Context);
+  const { leagues } = state;
   const [fontsLoaded] = useFonts({
     "Roboto-Condensed": require("../../assets/fonts/RobotoCondensed-Medium.ttf"),
   });

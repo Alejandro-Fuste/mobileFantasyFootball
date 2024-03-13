@@ -1,10 +1,10 @@
 import createDataContext from "./createDataContext";
-// import leagueReducer from "../reducers/leagueReducer";
-import { setLeagueName } from "../actions/leagueActions";
 import { SET_LEAGUE_NAME } from "../actions/types";
+import { setLeagueName } from "../actions/leagueActions";
+import { getLeagues } from "../actions/getActions";
 
 const initialState = {
-  leagues: [],
+  leagues: getLeagues().payload,
   leagueName: "",
 };
 
