@@ -8,7 +8,6 @@ const LeagueScreen = ({ route }) => {
   const { state } = useContext(Context);
   const { id, leagueName } = route.params;
   const [teams, setTeams] = useState(getLeague(id).payload);
-  console.log("from league screen", state);
 
   return (
     <View style={styles.container}>

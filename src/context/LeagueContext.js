@@ -1,6 +1,6 @@
 import createDataContext from "./createDataContext";
 // import leagueReducer from "../reducers/leagueReducer";
-// import { setLeagueName } from "../actions/leagueActions";
+import { setLeagueName } from "../actions/leagueActions";
 import { SET_LEAGUE_NAME } from "../actions/types";
 
 const initialState = {
@@ -18,12 +18,6 @@ const leagueReducer = (state = initialState, action) => {
     default:
       return state;
   }
-};
-
-const setLeagueName = (dispatch) => {
-  return (name) => {
-    dispatch({ type: SET_LEAGUE_NAME, payload: name });
-  };
 };
 
 export const { Context, Provider } = createDataContext(

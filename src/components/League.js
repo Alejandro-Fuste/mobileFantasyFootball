@@ -23,7 +23,6 @@ const League = ({ id, leagueName }) => {
       <Pressable
         style={[styles(id).button, styles(id).buttonOpen]}
         onPress={() => {
-          console.log("from league press", leagueName);
           setLeagueName(leagueName);
           return navigation.navigate("League", { id, leagueName });
         }}

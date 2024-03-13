@@ -6,7 +6,6 @@ const LogoHeader = () => {
   const { state } = useContext(Context);
   const { leagueName } = state;
 
-  console.log(state, leagueName);
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.headerText}>{leagueName}</Text>
