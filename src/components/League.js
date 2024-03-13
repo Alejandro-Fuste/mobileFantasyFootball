@@ -11,7 +11,7 @@ const League = ({ id, leagueName }) => {
   const [leagueDetails, setLeagueDetails] = useState(
     getLeagueDetails(id).payload
   );
-  const { state, setLeagueName } = useContext(Context);
+  const { setLeagueName } = useContext(Context);
 
   const navigation = useNavigation();
   const [fontsLoaded] = useFonts({

@@ -5,7 +5,7 @@ import { Context } from "../context/LeagueContext";
 import { useFonts } from "expo-font";
 
 const HomeScreen = () => {
-  const { state } = useContext(Context);
+  const { state, get_League_Details } = useContext(Context);
   const { leagues } = state;
   const [fontsLoaded] = useFonts({
     "Roboto-Condensed": require("../../assets/fonts/RobotoCondensed-Medium.ttf"),
