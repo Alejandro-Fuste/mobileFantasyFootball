@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import PlayerContent from "./PlayerContent";
 import { getPlayer } from "../actions/getActions";
+import defaultAvatar from "../../assets/defaultImage.png";
 
 const Player = ({ playerName }) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -45,7 +46,12 @@ const Player = ({ playerName }) => {
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
       >
-        <Image src={player.headShot} style={styles.headShot} />
+        <Image
+          defaultSource={defaultAvatar}
+          src={player.headShot}
+          style={styles.headShot}
+          accessibilityLabel="Player Image"
+        />
 
         <Text style={styles.nameGradeText}>{playerName}</Text>
 

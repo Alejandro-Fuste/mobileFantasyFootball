@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import determinePositionOpportunity from "../utils/determinePositionOpportunity";
+import defaultAvatar from "../../assets/defaultImage.png";
 
 const PlayerContent = ({ data }) => {
   const {
@@ -18,7 +19,12 @@ const PlayerContent = ({ data }) => {
       {/* Header */}
       <View style={styles.headerContainer}>
         <View style={styles.subHeader1Container}>
-          <Image src={headShot} style={styles.headShot} />
+          <Image
+            src={headShot}
+            defaultSource={defaultAvatar}
+            style={styles.headShot}
+            accessibilityLabel="Player Image"
+          />
 
           <View style={styles.subHeader2Container}>
             <Text style={styles.playerInfoTitle}>{name}</Text>
