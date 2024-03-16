@@ -6,6 +6,7 @@ import defaultAvatar from "../../assets/defaultImage.png";
 const PlayerContent = ({ data }) => {
   const {
     name,
+    age,
     headShot,
     position,
     team,
@@ -30,6 +31,7 @@ const PlayerContent = ({ data }) => {
             <Text style={styles.playerInfoTitle}>{name}</Text>
             <Text style={styles.playerInfoFont}>{team}</Text>
             <Text style={styles.playerInfoFont}>{position}</Text>
+            <Text style={styles.playerInfoFont}>{age}</Text>
           </View>
 
           <View testID="overGradeView">
@@ -38,6 +40,7 @@ const PlayerContent = ({ data }) => {
             <Text style={styles.playerInfoFont}>
               {overallGrade.grade.letter}
             </Text>
+            <Text> </Text>
           </View>
         </View>
 
