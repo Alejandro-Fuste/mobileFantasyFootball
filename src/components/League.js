@@ -9,7 +9,7 @@ import { Context } from "../context/LeagueContext";
 
 const League = ({ id, leagueName }) => {
   const [leagueDetails, setLeagueDetails] = useState(
-    getLeagueDetails(id).payload
+    getLeagueDetails(id, leagueName).payload
   );
   const { setLeagueName } = useContext(Context);
 

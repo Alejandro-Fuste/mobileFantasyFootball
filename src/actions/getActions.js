@@ -22,10 +22,10 @@ export const getLeague = (id) => {
   };
 };
 
-export const getLeagueDetails = (id) => {
+export const getLeagueDetails = (id, leagueName) => {
   return {
     type: GET_LEAGUE_DETAILS,
-    payload: data["leagues"][id]["details"],
+    payload: data["leagues"][id][leagueName]["details"],
   };
 };
 
