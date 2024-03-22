@@ -32,7 +32,7 @@ export const getLeagueDetails = (id, leagueName) => {
 export const getTeam = (leagueId, leagueName, teamId) => {
   return {
     type: GET_TEAM,
-    payload: data["leagues"][leagueId][leagueName][teamId],
+    payload: data["leagues"][leagueId][leagueName]["owners"][teamId],
   };
 };
 
