@@ -5,3 +5,4 @@ export const GET_TEAM = "GET_TEAM";
 export const GET_PLAYERS = "GET_PLAYERS";
 export const GET_PLAYER = "GET_PLAYER";
 export const SET_LEAGUE_NAME = "SET_LEAGUE_NAME";
+export const GET_RANK = "GET_RANK";

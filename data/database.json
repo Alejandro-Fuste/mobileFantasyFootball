@@ -9654,7 +9654,13 @@
               {
                 "name": "Amon-Ra St. Brown",
                 "age": 24,
-                "overallGrade": "N/A",
+                "overallGrade": {
+                  "value": 95,
+                  "grade": {
+                    "letter": "A",
+                    "description": "Great"
+                  }
+                },
                 "position": "WR",
                 "teamShortName": "DET",
                 "team": "Detroit",
@@ -9675,7 +9681,17 @@
                     "description": "Elite"
                   }
                 },
-                "opportunity": "N/A",
+                "opportunity": {
+                  "snapPercentage": 90,
+                  "receptions": 119,
+                  "targets": 164,
+                  "targetsRank": 5,
+                  "targetsPercentile": 98,
+                  "targetsGrade": {
+                    "letter": "A+",
+                    "description": "Elite"
+                  }
+                },
                 "offense": {
                   "pointsPerGame": 27.1,
                   "QBR": 98.1,
@@ -18791,7 +18807,13 @@
               {
                 "name": "Amon-Ra St. Brown",
                 "age": 24,
-                "overallGrade": "N/A",
+                "overallGrade": {
+                  "value": 95,
+                  "grade": {
+                    "letter": "A",
+                    "description": "Great"
+                  }
+                },
                 "position": "WR",
                 "teamShortName": "DET",
                 "team": "Detroit",
@@ -18812,7 +18834,17 @@
                     "description": "Elite"
                   }
                 },
-                "opportunity": "N/A",
+                "opportunity": {
+                  "snapPercentage": 90,
+                  "receptions": 119,
+                  "targets": 164,
+                  "targetsRank": 5,
+                  "targetsPercentile": 98,
+                  "targetsGrade": {
+                    "letter": "A+",
+                    "description": "Elite"
+                  }
+                },
                 "offense": {
                   "pointsPerGame": 27.1,
                   "QBR": 98.1,
@@ -32419,7 +32451,13 @@
               {
                 "name": "Amon-Ra St. Brown",
                 "age": 24,
-                "overallGrade": "N/A",
+                "overallGrade": {
+                  "value": 95,
+                  "grade": {
+                    "letter": "A",
+                    "description": "Great"
+                  }
+                },
                 "position": "WR",
                 "teamShortName": "DET",
                 "team": "Detroit",
@@ -32440,7 +32478,17 @@
                     "description": "Elite"
                   }
                 },
-                "opportunity": "N/A",
+                "opportunity": {
+                  "snapPercentage": 90,
+                  "receptions": 119,
+                  "targets": 164,
+                  "targetsRank": 5,
+                  "targetsPercentile": 98,
+                  "targetsGrade": {
+                    "letter": "A+",
+                    "description": "Elite"
+                  }
+                },
                 "offense": {
                   "pointsPerGame": 27.1,
                   "QBR": 98.1,
@@ -51482,7 +51530,13 @@
     "Amon-Ra St. Brown": {
       "name": "Amon-Ra St. Brown",
       "age": 24,
-      "overallGrade": "N/A",
+      "overallGrade": {
+        "value": 95,
+        "grade": {
+          "letter": "A",
+          "description": "Great"
+        }
+      },
       "position": "WR",
       "teamShortName": "DET",
       "team": "Detroit",
@@ -51503,7 +51557,17 @@
           "description": "Elite"
         }
       },
-      "opportunity": "N/A",
+      "opportunity": {
+        "snapPercentage": 90,
+        "receptions": 119,
+        "targets": 164,
+        "targetsRank": 5,
+        "targetsPercentile": 98,
+        "targetsGrade": {
+          "letter": "A+",
+          "description": "Elite"
+        }
+      },
       "offense": {
         "pointsPerGame": 27.1,
         "QBR": 98.1,
@@ -60761,7 +60825,13 @@
     "Equanimeous St. Brown": {
       "name": "Equanimeous St. Brown",
       "age": 27,
-      "overallGrade": "N/A",
+      "overallGrade": {
+        "value": 25.75,
+        "grade": {
+          "letter": "F",
+          "description": "Not Good Enough"
+        }
+      },
       "position": "WR",
       "teamShortName": "CHI",
       "team": "Chicago",

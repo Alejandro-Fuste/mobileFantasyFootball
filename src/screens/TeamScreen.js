@@ -8,13 +8,16 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import Player from "../components/Player";
-import { getTeam } from "../actions/getActions";
+import { getTeam, getRank } from "../actions/getActions";
 import filterAndSortPlayers from "../utils/filterAndSortPlayers";
 
 const TeamScreen = ({ route }) => {
-  const { leagueId, leagueName, teamId, teamName, avatar } = route.params;
+  const { leagueId, leagueName, teamId, teamName } = route.params;
   const [team, setTeam] = useState(
     getTeam(leagueId, leagueName, teamId).payload
+  );
+  const [rank] = useState(
+    getRank(leagueId, leagueName, team.displayName).payload
   );
 
   const DATA = [
@@ -80,7 +83,7 @@ const TeamScreen = ({ route }) => {
             testID="rankNumber"
             style={[styles.headerColor, styles.teamOwner]}
           >
-            {team.rank}
+            {rank}
           </Text>
         </View>
       </View>

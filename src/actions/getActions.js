@@ -6,6 +6,7 @@ import {
   GET_TEAM,
   GET_PLAYERS,
   GET_PLAYER,
+  GET_RANK,
 } from "./types";
 
 export const getLeagues = () => {
@@ -47,5 +48,12 @@ export const getPlayer = (name) => {
   return {
     type: GET_PLAYER,
     payload: data["players"][name],
+  };
+};
+
+export const getRank = (id, leagueName, name) => {
+  return {
+    type: GET_RANK,
+    payload: data["leagues"][id][leagueName]["ranks"].indexOf(name) + 1,
   };
 };
