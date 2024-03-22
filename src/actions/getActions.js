@@ -15,10 +15,10 @@ export const getLeagues = () => {
   };
 };
 
-export const getLeague = (id) => {
+export const getLeague = (id, leagueName) => {
   return {
     type: GET_LEAGUE,
-    payload: data["leagues"][id],
+    payload: data["leagues"][id][leagueName]["owners"],
   };
 };
 

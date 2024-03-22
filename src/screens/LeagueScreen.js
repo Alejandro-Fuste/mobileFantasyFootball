@@ -7,19 +7,18 @@ import { Context } from "../context/LeagueContext";
 const LeagueScreen = ({ route }) => {
   const { state } = useContext(Context);
   const { id, leagueName } = route.params;
-  const [teams, setTeams] = useState(getLeague(id).payload);
+  const [teams, setTeams] = useState(getLeague(id, leagueName).payload);
 
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        {/* <Text>{leagueName}</Text> */}
         <Text style={styles.teamsText}>Teams</Text>
       </View>
 
       <View style={styles.contentContainer}>
         <SafeAreaView style={styles.container}>
           <FlatList
-            data={teams[leagueName]}
+            data={teams}
             renderItem={({ item, index }) => (
               <Team
                 key={index}
